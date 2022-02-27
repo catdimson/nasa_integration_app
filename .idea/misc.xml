@@ -8,9 +8,14 @@
         <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/drawable/ic_favourite_menu.xml" value="0.21875" />
         <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.21875" />
         <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.21875" />
+        <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/drawable/ic_send.xml" value="0.22291666666666668" />
         <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/layout/activity_main.xml" value="0.20520833333333333" />
+        <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/layout/bottom_navigation_layout.xml" value="0.20677083333333332" />
         <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/layout/bottom_sheet_layout.xml" value="0.1" />
         <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/layout/fragment_main.xml" value="0.20520833333333333" />
+        <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/menu/menu_bottom_bar.xml" value="0.20677083333333332" />
+        <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/menu/menu_bottom_bar_other_screen.xml" value="0.20677083333333332" />
+        <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.20677083333333332" />
       </map>
     </option>
   </component>
