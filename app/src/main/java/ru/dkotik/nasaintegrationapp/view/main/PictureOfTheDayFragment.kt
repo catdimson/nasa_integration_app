@@ -8,6 +8,7 @@ import android.view.*
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -16,7 +17,9 @@ import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import ru.dkotik.nasaintegrationapp.R
 import ru.dkotik.nasaintegrationapp.databinding.FragmentMainBinding
+import ru.dkotik.nasaintegrationapp.utils.showSnackBarWithResources
 import ru.dkotik.nasaintegrationapp.view.MainActivity
+import ru.dkotik.nasaintegrationapp.view.chips.ChipsFragment
 import ru.dkotik.nasaintegrationapp.viewmodel.PictureOfTheDayDataState
 import ru.dkotik.nasaintegrationapp.viewmodel.PictureOfTheDayViewModel
 
@@ -86,22 +89,22 @@ class PictureOfTheDayFragment: Fragment() {
             is PictureOfTheDayDataState.Success -> {
                 val serverResponseData = data.serverResponseData
                 val urlImage = serverResponseData.url
-
-                if (urlImage.isNullOrEmpty()) {
-                    //Отобразите ошибку
-                    //showError("Сообщение, что ссылка пустая")
-                } else {
-                    binding.bsl.bottomSheetDescriptionHeader.text = serverResponseData.title
-                    binding.bsl.bottomSheetDescription.text = serverResponseData.explanation
-                    binding.imageView.load(urlImage)
-                }
+                binding.includedLoadingLayout.loadingLayout.isVisible = false
+                binding.bsl.bottomSheetDescriptionHeader.text = serverResponseData.title
+                binding.bsl.bottomSheetDescription.text = serverResponseData.explanation
+                binding.imageView.load(urlImage)
             }
             is PictureOfTheDayDataState.Loading -> {
-                //Отобразите загрузку
-                //showLoading()
+                binding.includedLoadingLayout.loadingLayout.isVisible = true
             }
             is PictureOfTheDayDataState.Error -> {
-
+                binding.includedLoadingLayout.loadingLayout.isVisible = false
+                binding.fab.showSnackBarWithResources(
+                    fragment = this,
+                    text = R.string.error,
+                    actionText = R.string.reload,
+                    { viewModel.sendServerRequest() }
+                )
             }
         }
     }
@@ -114,7 +117,13 @@ class PictureOfTheDayFragment: Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
             R.id.app_bar_fav -> Toast.makeText(requireContext(), "app_bar_fav", Toast.LENGTH_SHORT).show()
-            R.id.app_bar_settings -> Toast.makeText(requireContext(), "app_bar_settings", Toast.LENGTH_SHORT).show()
+            R.id.app_bar_settings -> {
+                requireActivity().supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.container, ChipsFragment.newInstance())
+                    .addToBackStack("")
+                    .commit()
+            }
             android.R.id.home -> {
                 activity?.let {
                     BottomNavigationDrawerFragment().show(it.supportFragmentManager, "tag")
