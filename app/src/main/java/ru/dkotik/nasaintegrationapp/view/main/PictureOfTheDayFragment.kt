@@ -1,5 +1,6 @@
 package ru.dkotik.nasaintegrationapp.view.main
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -23,11 +24,12 @@ import ru.dkotik.nasaintegrationapp.view.chips.ChipsFragment
 import ru.dkotik.nasaintegrationapp.viewmodel.PictureOfTheDayDataState
 import ru.dkotik.nasaintegrationapp.viewmodel.PictureOfTheDayViewModel
 
-class PictureOfTheDayFragment: Fragment() {
+class PictureOfTheDayFragment: Fragment(), View.OnClickListener {
     private var _binding: FragmentMainBinding? = null
     val binding: FragmentMainBinding
         get () = _binding!!
     var isMain: Boolean = true
+    private lateinit var parentActivity: MainActivity
 
     companion object {
         fun newInstance() = PictureOfTheDayFragment()
@@ -48,6 +50,11 @@ class PictureOfTheDayFragment: Fragment() {
         return binding.root
     }
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        parentActivity = activity as MainActivity
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -63,6 +70,8 @@ class PictureOfTheDayFragment: Fragment() {
                 data = Uri.parse("https://en.wikipedia.org/wiki/${binding.inputEditText.text.toString()}")
             })
         }
+
+        binding.swapTheme.setOnClickListener(this)
 
         bottomSheetBehavior = BottomSheetBehavior.from(binding.bsl.bottomSheetContainer)
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
@@ -163,5 +172,14 @@ class PictureOfTheDayFragment: Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+    }
+
+    override fun onClick(v: View?) {
+        when (v?.id) {
+            R.id.swap_theme -> {
+                parentActivity.swapTheme()
+                parentActivity.recreate()
+            }
+        }
     }
 }

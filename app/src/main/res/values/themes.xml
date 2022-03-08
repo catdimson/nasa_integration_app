@@ -16,5 +16,35 @@
         <item name="colorOnTertiary">#712323</item>
         <item name="colorTertiaryContainer">@color/red_100</item>
         <item name="colorOnTertiaryContainer">@color/red_900</item>
+
+        <!--<item name="android:statusBarColor">?attr/colorPrimary_400</item>
+        <item name="android:navigationBarColor">?attr/colorPrimary_400</item>
+
+        <item name="colorPrimary">?attr/colorPrimary_300</item>
+        <item name="colorPrimaryVariant">?attr/colorPrimaryDark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">?attr/colorPrimary_100</item>
+        <item name="colorOnPrimaryContainer">?attr/colorPrimary_500</item>
+
+        <item name="colorError">?attr/colorPrimary_300</item>
+        <item name="colorOnError">#FFFFFF</item>
+        <item name="colorSurface">#FFFFFF</item>
+        <item name="colorOnSurface">#212121</item>
+
+        <item name="colorPrimaryInverse">?attr/colorPrimary_200</item>
+
+        <item name="colorSecondary">?attr/colorSecondary_300</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">?attr/colorSecondary_100</item>
+        <item name="colorOnSecondaryContainer">?attr/colorSecondary_500</item>
+
+        <item name="colorTertiary">?attr/colorThird_300</item>
+        <item name="colorOnTertiary">@color/white</item>
+        <item name="colorTertiaryContainer">?attr/colorThird_100</item>
+        <item name="colorOnTertiaryContainer">?attr/colorThird_500</item>
+
+        <item name="floatingActionButtonStyle">@style/customFAB</item>
+        <item name="bottomAppBarStyle">@style/customABS</item>
+        <item name="circularProgressIndicatorStyle">@style/customProgressBar</item>-->
     </style>
 </resources>
