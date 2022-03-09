@@ -20,6 +20,8 @@ import ru.dkotik.nasaintegrationapp.R
 import ru.dkotik.nasaintegrationapp.databinding.FragmentMainBinding
 import ru.dkotik.nasaintegrationapp.utils.showSnackBarWithResources
 import ru.dkotik.nasaintegrationapp.view.MainActivity
+import ru.dkotik.nasaintegrationapp.view.MainTheme
+import ru.dkotik.nasaintegrationapp.view.SecondaryTheme
 import ru.dkotik.nasaintegrationapp.view.chips.ChipsFragment
 import ru.dkotik.nasaintegrationapp.viewmodel.PictureOfTheDayDataState
 import ru.dkotik.nasaintegrationapp.viewmodel.PictureOfTheDayViewModel
@@ -60,6 +62,9 @@ class PictureOfTheDayFragment: Fragment(), View.OnClickListener {
 
         setBottomAppBar(view)
 
+        binding.theme1.setOnClickListener(this)
+        binding.theme2.setOnClickListener(this)
+
         viewModel.getData().observe(viewLifecycleOwner, {
             renderData(it)
         })
@@ -70,8 +75,6 @@ class PictureOfTheDayFragment: Fragment(), View.OnClickListener {
                 data = Uri.parse("https://en.wikipedia.org/wiki/${binding.inputEditText.text.toString()}")
             })
         }
-
-        binding.swapTheme.setOnClickListener(this)
 
         bottomSheetBehavior = BottomSheetBehavior.from(binding.bsl.bottomSheetContainer)
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
@@ -169,17 +172,22 @@ class PictureOfTheDayFragment: Fragment(), View.OnClickListener {
         }
     }
 
+    override fun onClick(v: View) {
+        when (v.id) {
+            R.id.theme1 -> {
+                parentActivity.setCurrentTheme(MainTheme)
+                parentActivity.recreate() // применяем для всей активити и для всех дочерних фрагментов
+            }
+            R.id.theme2 -> {
+                parentActivity.setCurrentTheme(SecondaryTheme)
+                parentActivity.recreate() // применяем для всей активити и для всех дочерних фрагментов
+            }
+        }
+
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
-    }
-
-    override fun onClick(v: View?) {
-        when (v?.id) {
-            R.id.swap_theme -> {
-                parentActivity.swapTheme()
-                parentActivity.recreate()
-            }
-        }
     }
 }

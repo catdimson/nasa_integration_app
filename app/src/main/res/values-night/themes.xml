@@ -26,26 +26,6 @@
         <item name="colorOnTertiary">@color/white</item>
         <item name="colorTertiaryContainer">?attr/colorThird_100</item>
         <item name="colorOnTertiaryContainer">?attr/colorThird_500</item>
-
-        <item name="floatingActionButtonStyle">@style/customFAB</item>
-        <item name="bottomAppBarStyle">@style/customABS</item>
-        <item name="circularProgressIndicatorStyle">@style/customProgressBar</item>
-    </style>
-
-    <style name="customFAB" parent="Widget.MaterialComponents.FloatingActionButton">
-        <item name="backgroundTint">@color/orange_100</item>
-    </style>
-
-    <style name="customABS" parent="Widget.MaterialComponents.BottomAppBar">
-        <item name="backgroundTint">@color/dark_gray</item>
-    </style>
-
-    <style name="customProgressBar" parent="Widget.MaterialComponents.CircularProgressIndicator">
-        <item name="indicatorColor">@color/orange_100</item>
-    </style>
-
-    <style name="customMaterialToolbarIcons" parent="">
-        <item name="colorControlNormal">@color/white</item>
     </style>
 
     <!-- Основная тема -->
@@ -62,6 +42,10 @@
         <item name="colorThird_100">@color/green_100</item>
         <item name="colorThird_300">@color/green_300</item>
         <item name="colorThird_500">@color/green_500</item>
+
+        <item name="floatingActionButtonStyle">@style/customFAB</item>
+        <item name="bottomAppBarStyle">@style/customABS</item>
+        <item name="circularProgressIndicatorStyle">@style/customProgressBar</item>
 <!--
         <item name="fontFamily">@font/roboto_mono</item>
         <item name="android:fontFamily">@font/roboto_mono</item>-->
@@ -69,17 +53,45 @@
 
     <!-- Второстепенная тема -->
     <style name="SecondaryTheme" parent="BaseTheme">
-        <item name="colorPrimary_100">@color/orange_100</item>
-        <item name="colorPrimary_200">@color/orange_200</item>
-        <item name="colorPrimary_300">@color/orange_300</item>
-        <item name="colorPrimary_500">@color/orange_500</item>
+        <item name="colorPrimary_100">@color/green2_100</item>
+        <item name="colorPrimary_200">@color/green2_200</item>
+        <item name="colorPrimary_300">@color/green2_300</item>
+        <item name="colorPrimary_500">@color/green2_500</item>
 
-        <item name="colorSecondary_100">@color/violet_100</item>
-        <item name="colorSecondary_300">@color/orange_200</item>
-        <item name="colorSecondary_500">@color/violet_500</item>
+        <item name="colorSecondary_100">@color/pink_100</item>
+        <item name="colorSecondary_300">@color/green2_200</item>
+        <item name="colorSecondary_500">@color/pink_500</item>
 
-        <item name="colorThird_100">@color/green_100</item>
-        <item name="colorThird_300">@color/green_300</item>
-        <item name="colorThird_500">@color/green_500</item>
+        <item name="colorThird_100">@color/orange2_100</item>
+        <item name="colorThird_300">@color/orange2_300</item>
+        <item name="colorThird_500">@color/orange2_500</item>
+
+        <item name="floatingActionButtonStyle">@style/customFAB2</item>
+        <item name="bottomAppBarStyle">@style/customABS2</item>
+        <item name="circularProgressIndicatorStyle">@style/customProgressBar2</item>
+    </style>
+
+    <style name="customFAB" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="backgroundTint">@color/orange_100</item>
+    </style>
+
+    <style name="customABS" parent="Widget.MaterialComponents.BottomAppBar">
+        <item name="backgroundTint">@color/dark_gray</item>
+    </style>
+
+    <style name="customProgressBar" parent="Widget.MaterialComponents.CircularProgressIndicator">
+        <item name="indicatorColor">@color/orange_100</item>
+    </style>
+
+    <style name="customFAB2" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="backgroundTint">@color/green2_100</item>
+    </style>
+
+    <style name="customABS2" parent="Widget.MaterialComponents.BottomAppBar">
+        <item name="backgroundTint">@color/dark_gray</item>
+    </style>
+
+    <style name="customProgressBar2" parent="Widget.MaterialComponents.CircularProgressIndicator">
+        <item name="indicatorColor">@color/green2_100</item>
     </style>
 </resources>

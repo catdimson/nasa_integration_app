@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import ru.dkotik.nasaintegrationapp.R
+import ru.dkotik.nasaintegrationapp.databinding.ActivityMainBinding
 import ru.dkotik.nasaintegrationapp.view.main.PictureOfTheDayFragment
 
 const val MainTheme = 1
@@ -28,12 +29,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun swapTheme() {
+    fun setCurrentTheme(currentTheme: Int) {
         val sharedPreferences = getSharedPreferences(KEY_SP, MODE_PRIVATE)
-        val installedTheme = sharedPreferences.getInt(KEY_CURRENT_THEME, -1)
-        val savingTheme = detectSavingTheme(installedTheme)
         val editor = sharedPreferences.edit()
-        editor.putInt(KEY_CURRENT_THEME, savingTheme)
+        editor.putInt(KEY_CURRENT_THEME, currentTheme)
         editor.apply()
     }
 
@@ -47,14 +46,6 @@ class MainActivity : AppCompatActivity() {
             MainTheme -> R.style.MainTheme
             SecondaryTheme -> R.style.SecondaryTheme
             else -> 0
-        }
-    }
-
-    private fun detectSavingTheme(theme: Int): Int {
-        return when (theme) {
-            MainTheme -> R.style.SecondaryTheme
-            SecondaryTheme -> R.style.MainTheme
-            else -> R.style.MainTheme
         }
     }
 }
