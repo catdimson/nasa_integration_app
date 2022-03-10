@@ -38,6 +38,9 @@
     <color name="green_400">#1E6F5B</color>
     <color name="green_500">#016149</color>
 
+    <color name="colorAccent">#AC842E</color>
+    <color name="colorAccent40Alfa">#66AC842E</color>
+
     <!-- SecondaryTheme -->
     <!-- primary colors -->
     <color name="green2_100">#80EA69</color>
