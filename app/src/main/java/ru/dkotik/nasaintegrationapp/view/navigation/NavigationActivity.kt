@@ -14,6 +14,11 @@ class NavigationActivity: AppCompatActivity() {
         binding = ActivityNavigationBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.viewPager.adapter = ViewPagerAdapter(supportFragmentManager)
+        binding.tabLayout.setupWithViewPager(binding.viewPager)
+
+        binding.tabLayout.getTabAt(EARTH_KEY)?.setIcon(R.drawable.ic_earth)
+        binding.tabLayout.getTabAt(MARS_KEY)?.setIcon(R.drawable.ic_mars)
+        binding.tabLayout.getTabAt(SYSTEM_KEY)?.setIcon(R.drawable.ic_system)
     }
     
 }

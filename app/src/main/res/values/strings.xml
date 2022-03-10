@@ -14,5 +14,8 @@
     <string name="swap_theme">Сменить тему</string>
     <string name="theme1">Тема 1</string>
     <string name="theme2">Тема 2</string>
+    <string name="system">System</string>
+    <string name="earth">Earth</string>
+    <string name="mars">Mars</string>
 
 </resources>
