@@ -33,5 +33,7 @@
     <string name="photo_mars_rover_name">"Название марсохода: "</string>
     <string name="photo_mars_landing_date">"Дата высадки: "</string>
     <string name="photo_mars_status_rover">"Статус аппарата: "</string>
+    <string name="link_to_video_text">Уууупс. Кажется это видео. Вы можете просмотреть его, нажав на кнопку</string>
+    <string name="btn_link_to_video">Смотреть</string>
 
 </resources>

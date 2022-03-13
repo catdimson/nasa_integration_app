@@ -18,6 +18,7 @@ import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import ru.dkotik.nasaintegrationapp.R
 import ru.dkotik.nasaintegrationapp.databinding.FragmentMainBinding
+import ru.dkotik.nasaintegrationapp.dto.pod.PODServerResponseData
 import ru.dkotik.nasaintegrationapp.utils.showSnackBarWithResources
 import ru.dkotik.nasaintegrationapp.view.MainActivity
 import ru.dkotik.nasaintegrationapp.view.MainTheme
@@ -101,10 +102,16 @@ class PictureOfTheDayFragment: Fragment(), View.OnClickListener {
             is AppState.SuccessPOD -> {
                 val serverResponseData = data.serverResponseData
                 val urlImage = serverResponseData.url
-                binding.includedLoadingLayout.loadingLayout.isVisible = false
+
+                if (serverResponseData.hdurl.isNullOrEmpty()) {
+                    rebuildViewUnderVideo(serverResponseData)
+                } else {
+                    binding.imageView.load(urlImage)
+                }
+
                 binding.bsl.bottomSheetDescriptionHeader.text = serverResponseData.title
                 binding.bsl.bottomSheetDescription.text = serverResponseData.explanation
-                binding.imageView.load(urlImage)
+                binding.includedLoadingLayout.loadingLayout.isVisible = false
             }
             is AppState.Loading -> {
                 binding.includedLoadingLayout.loadingLayout.isVisible = true
@@ -171,6 +178,15 @@ class PictureOfTheDayFragment: Fragment(), View.OnClickListener {
             isMain = !isMain
         }
     }*/
+
+    private fun rebuildViewUnderVideo(data: PODServerResponseData) {
+        binding.imageView.isVisible = false
+        binding.linkToVideoHeader.isVisible = true
+        binding.btnLinkToVideo.isVisible = true
+        binding.btnLinkToVideo.setOnClickListener {
+            startActivity(Intent(Intent.ACTION_VIEW).apply { Uri.parse(data.url) })
+        }
+    }
 
     override fun onClick(v: View) {
         when (v.id) {
