@@ -24,7 +24,6 @@ import ru.dkotik.nasaintegrationapp.view.MainActivity
 import ru.dkotik.nasaintegrationapp.view.MainTheme
 import ru.dkotik.nasaintegrationapp.view.SecondaryTheme
 import ru.dkotik.nasaintegrationapp.view.chips.ChipsFragment
-import ru.dkotik.nasaintegrationapp.viewmodel.PictureOfTheDayDataState
 import ru.dkotik.nasaintegrationapp.viewmodel.PictureOfTheDayViewModel
 
 class MarsFragment: Fragment() {

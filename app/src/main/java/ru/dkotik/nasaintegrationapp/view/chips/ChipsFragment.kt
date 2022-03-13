@@ -18,7 +18,6 @@ import ru.dkotik.nasaintegrationapp.R
 import ru.dkotik.nasaintegrationapp.databinding.FragmentChipsBinding
 import ru.dkotik.nasaintegrationapp.databinding.FragmentMainBinding
 import ru.dkotik.nasaintegrationapp.view.MainActivity
-import ru.dkotik.nasaintegrationapp.viewmodel.PictureOfTheDayDataState
 import ru.dkotik.nasaintegrationapp.viewmodel.PictureOfTheDayViewModel
 
 class ChipsFragment: Fragment() {

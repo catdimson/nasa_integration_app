@@ -18,4 +18,13 @@
     <string name="earth">Earth</string>
     <string name="mars">Mars</string>
 
+    <!-- Пункты меню навигации -->
+    <string name="page_main">Главная</string>
+    <string name="page_marsohod">Марс</string>
+    <string name="page_asteroid">Астероиды</string>
+    <string name="page_epic_earth">Земля</string>
+    <string name="page_weather">Погода</string>
+
+    <string name="photo_of_mars">Фото марса</string>
+
 </resources>

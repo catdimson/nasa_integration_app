@@ -1,4 +1,4 @@
-package ru.dkotik.nasaintegrationapp.repository
+package ru.dkotik.nasaintegrationapp.dto
 
 import com.google.gson.annotations.SerializedName
 

@@ -8,11 +8,11 @@ class PODRetrofitRemoteImpl {
 
     private val baseUrl = "https://api.nasa.gov/"
 
-    fun getRetrofitImpl(): PictureOfTheDayAPI {
+    fun getRetrofitImpl(): NasaRetrofitAPI {
         val podRetrofit = Retrofit.Builder()
             .baseUrl(baseUrl)
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().setLenient().create()))
             .build()
-        return podRetrofit.create(PictureOfTheDayAPI::class.java)
+        return podRetrofit.create(NasaRetrofitAPI::class.java)
     }
 }
