@@ -2,13 +2,14 @@ package ru.dkotik.nasaintegrationapp.viewmodel
 
 import android.annotation.SuppressLint
 import android.os.Build
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import ru.dkotik.nasaintegrationapp.BuildConfig
-import ru.dkotik.nasaintegrationapp.dto.MarsPhotosServerResponseData
+import ru.dkotik.nasaintegrationapp.dto.marsphotos.MarsPhotosServerResponseData
 import ru.dkotik.nasaintegrationapp.repository.MarsPictureByDateRetrofitRemoteImpl
 import java.text.SimpleDateFormat
 import java.time.LocalDateTime
@@ -24,6 +25,10 @@ class MarsPictureViewModel(
         liveDataToObserve.postValue(AppState.Loading(null))
         val earthDate = getDayBeforeYesterday()
         retrofitImpl.getMarsPictureByDate(earthDate, BuildConfig.NASA_API_KEY, marsCallback)
+    }
+
+    fun getData(): LiveData<AppState> {
+        return liveDataToObserve
     }
 
     @SuppressLint("SimpleDateFormat")

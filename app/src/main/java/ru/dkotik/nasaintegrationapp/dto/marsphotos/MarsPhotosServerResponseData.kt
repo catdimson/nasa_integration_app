@@ -1,4 +1,4 @@
-package ru.dkotik.nasaintegrationapp.dto
+package ru.dkotik.nasaintegrationapp.dto.marsphotos
 
 import com.google.gson.annotations.SerializedName
 

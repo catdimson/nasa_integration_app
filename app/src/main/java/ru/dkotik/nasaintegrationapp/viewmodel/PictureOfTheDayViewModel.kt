@@ -8,7 +8,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import ru.dkotik.nasaintegrationapp.BuildConfig.NASA_API_KEY
 import ru.dkotik.nasaintegrationapp.repository.PODRetrofitRemoteImpl
-import ru.dkotik.nasaintegrationapp.dto.PODServerResponseData
+import ru.dkotik.nasaintegrationapp.dto.pod.PODServerResponseData
 
 class PictureOfTheDayViewModel(
     private val liveDataForViewToObserve: MutableLiveData<AppState> = MutableLiveData(),

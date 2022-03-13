@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import ru.dkotik.nasaintegrationapp.R
 import ru.dkotik.nasaintegrationapp.databinding.ActivityMainBinding
 import ru.dkotik.nasaintegrationapp.view.main.MarsPictureFragment
 import ru.dkotik.nasaintegrationapp.view.main.PictureOfTheDayFragment
+import ru.dkotik.nasaintegrationapp.view.main.RootFragment
 
 const val MainTheme = 1
 const val SecondaryTheme = 2
@@ -24,11 +26,10 @@ class MainActivity : AppCompatActivity() {
         setTheme(getRealStyle(getCurrentTheme()))
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_main)
-        initBottomNavigationView()
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container, PictureOfTheDayFragment.newInstance())
+                .replace(R.id.root, RootFragment.newInstance())
                 .commit()
         }
     }
@@ -53,37 +54,4 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun initBottomNavigationView() {
-        binding.menuBnvMain.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.bottom_view_main -> {
-                    navigationTo(PictureOfTheDayFragment.newInstance())
-                    true
-                }
-                R.id.bottom_view_marsohod -> {
-                    navigationTo(MarsPictureFragment.newInstance())
-                    true
-                }
-                R.id.bottom_view_epic_earth -> {
-                    navigationTo(PictureOfTheDayFragment.newInstance())
-                    true
-                }
-                R.id.bottom_view_asteroid -> {
-                    navigationTo(PictureOfTheDayFragment.newInstance())
-                    true
-                }
-                R.id.bottom_view_weather -> {
-                    navigationTo(PictureOfTheDayFragment.newInstance())
-                    true
-                }
-                else -> true
-            }
-        }
-//        binding.menuBnvMain.selectedItemId = R.id.bottom_view_main
-
-    }
-
-    private fun navigationTo(f: Fragment) {
-        supportFragmentManager.beginTransaction().replace(R.id.container, f).commit()
-    }
 }

@@ -12,6 +12,7 @@ import com.google.android.material.snackbar.Snackbar
 import ru.dkotik.nasaintegrationapp.R
 import ru.dkotik.nasaintegrationapp.databinding.FragmentMainBinding
 import ru.dkotik.nasaintegrationapp.databinding.FragmentPageMarsPhotoBinding
+import ru.dkotik.nasaintegrationapp.dto.marsphotos.MarsServerResponseData
 import ru.dkotik.nasaintegrationapp.utils.showSnackBarWithResources
 import ru.dkotik.nasaintegrationapp.view.MainActivity
 import ru.dkotik.nasaintegrationapp.viewmodel.AppState
@@ -41,14 +42,23 @@ class MarsPictureFragment: Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel.getData().observe(viewLifecycleOwner, {
+            renderData(it)
+        })
+        viewModel.getMarsPicture()
+    }
+
     private fun renderData(data: AppState) {
         when (data) {
             is AppState.SuccessMars -> {
                 if (data.serverResponseData.photos.isEmpty()){
                     Snackbar.make(binding.root, "В этот день curiosity не сделал ни одного снимка", Snackbar.LENGTH_SHORT).show()
                 } else {
-                    val url = data.serverResponseData.photos.first().imgSrc
-                    binding.imageView.load(url)
+                    val responseData = data.serverResponseData.photos.first()
+                    fullFields(responseData)
+                    binding.includedLoadingLayout.loadingLayout.isVisible = false
                 }
             }
             is AppState.Loading -> {
@@ -64,6 +74,18 @@ class MarsPictureFragment: Fragment() {
                 )
             }
         }
+    }
+
+    private fun fullFields(data: MarsServerResponseData) {
+        binding.cameraName.text = data.camera?.name ?: ""
+        binding.cameraFullName.text = data.camera?.fullName ?: ""
+
+        binding.roverName.text = data.rover?.name ?: ""
+        binding.roverLandingDate.text = data.rover?.landingDate ?: ""
+        binding.roverStatus.text = data.rover?.status ?: ""
+
+        binding.imageView.load(data.imgSrc)
+        binding.photoMarsDate.text = data.earthDate
     }
 
     override fun onDestroy() {

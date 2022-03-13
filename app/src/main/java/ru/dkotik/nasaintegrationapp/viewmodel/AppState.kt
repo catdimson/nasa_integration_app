@@ -1,7 +1,7 @@
 package ru.dkotik.nasaintegrationapp.viewmodel
 
-import ru.dkotik.nasaintegrationapp.dto.MarsPhotosServerResponseData
-import ru.dkotik.nasaintegrationapp.dto.PODServerResponseData
+import ru.dkotik.nasaintegrationapp.dto.marsphotos.MarsPhotosServerResponseData
+import ru.dkotik.nasaintegrationapp.dto.pod.PODServerResponseData
 
 sealed class AppState {
 
