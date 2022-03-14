@@ -22,6 +22,8 @@ import ru.dkotik.nasaintegrationapp.view.MainActivity
 import ru.dkotik.nasaintegrationapp.view.chips.ChipsFragment
 import ru.dkotik.nasaintegrationapp.viewmodel.PictureOfTheDayDataState
 import ru.dkotik.nasaintegrationapp.viewmodel.PictureOfTheDayViewModel
+import java.text.SimpleDateFormat
+import java.util.*
 
 class PictureOfTheDayFragment: Fragment() {
     private var _binding: FragmentMainBinding? = null
@@ -65,7 +67,7 @@ class PictureOfTheDayFragment: Fragment() {
         }
 
         bottomSheetBehavior = BottomSheetBehavior.from(binding.bsl.bottomSheetContainer)
-        bottomSheetBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
+        bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
         bottomSheetBehavior.addBottomSheetCallback(object :
             BottomSheetBehavior.BottomSheetCallback() {
             override fun onStateChanged(bottomSheet: View, newState: Int) {
@@ -82,6 +84,17 @@ class PictureOfTheDayFragment: Fragment() {
                 Log.d("mylogs", "$slideOffset slideOffset")
             }
         })
+
+        binding.chipGroup.setOnCheckedChangeListener { group, checkedId ->
+            when(checkedId) {
+                R.id.yesterday -> {
+                    viewModel.sendServerRequest(takeDate(-1))
+                }
+                R.id.today -> {
+                    viewModel.sendServerRequest()
+                }
+            }
+        }
     }
 
     private fun renderData(data: PictureOfTheDayDataState) {
@@ -158,6 +171,14 @@ class PictureOfTheDayFragment: Fragment() {
             }
             isMain = !isMain
         }
+    }
+
+    private fun takeDate(count: Int): String {
+        val currentDate = Calendar.getInstance()
+        currentDate.add(Calendar.DAY_OF_MONTH, count)
+        val format1 = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        format1.timeZone = TimeZone.getTimeZone("EST")
+        return format1.format(currentDate.time)
     }
 
     override fun onDestroy() {

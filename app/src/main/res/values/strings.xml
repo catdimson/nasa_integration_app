@@ -11,4 +11,8 @@
     <string name="error">Ошибка</string>
     <string name="reload">Повторить</string>
 
+    <!-- Текст для чипов, для выбора картинки дня -->
+    <string name="yesterday">Вчера</string>
+    <string name="today">Сегодня</string>
+
 </resources>

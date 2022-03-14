@@ -16,5 +16,11 @@
         <item name="colorOnTertiary">#712323</item>
         <item name="colorTertiaryContainer">@color/red_100</item>
         <item name="colorOnTertiaryContainer">@color/red_900</item>
+
+        <item name="bottomAppBarStyle">@style/customABS</item>
+    </style>
+
+    <style name="customABS" parent="Widget.MaterialComponents.BottomAppBar">
+        <item name="navigationIconTint">@color/customABS</item>
     </style>
 </resources>
