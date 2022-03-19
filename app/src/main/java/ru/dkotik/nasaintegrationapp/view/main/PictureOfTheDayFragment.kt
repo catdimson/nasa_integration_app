@@ -1,5 +1,6 @@
 package ru.dkotik.nasaintegrationapp.view.main
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -19,17 +20,20 @@ import ru.dkotik.nasaintegrationapp.R
 import ru.dkotik.nasaintegrationapp.databinding.FragmentMainBinding
 import ru.dkotik.nasaintegrationapp.utils.showSnackBarWithResources
 import ru.dkotik.nasaintegrationapp.view.MainActivity
+import ru.dkotik.nasaintegrationapp.view.MainTheme
+import ru.dkotik.nasaintegrationapp.view.SecondaryTheme
 import ru.dkotik.nasaintegrationapp.view.chips.ChipsFragment
 import ru.dkotik.nasaintegrationapp.viewmodel.PictureOfTheDayDataState
 import ru.dkotik.nasaintegrationapp.viewmodel.PictureOfTheDayViewModel
 import java.text.SimpleDateFormat
 import java.util.*
 
-class PictureOfTheDayFragment: Fragment() {
+class PictureOfTheDayFragment: Fragment(), View.OnClickListener {
     private var _binding: FragmentMainBinding? = null
     val binding: FragmentMainBinding
         get () = _binding!!
     var isMain: Boolean = true
+    private lateinit var parentActivity: MainActivity
 
     companion object {
         fun newInstance() = PictureOfTheDayFragment()
@@ -50,10 +54,18 @@ class PictureOfTheDayFragment: Fragment() {
         return binding.root
     }
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        parentActivity = activity as MainActivity
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         setBottomAppBar(view)
+
+        binding.theme1.setOnClickListener(this)
+        binding.theme2.setOnClickListener(this)
 
         viewModel.getData().observe(viewLifecycleOwner, {
             renderData(it)
@@ -179,6 +191,20 @@ class PictureOfTheDayFragment: Fragment() {
         val format1 = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
         format1.timeZone = TimeZone.getTimeZone("EST")
         return format1.format(currentDate.time)
+    }
+
+    override fun onClick(v: View) {
+        when (v.id) {
+            R.id.theme1 -> {
+                parentActivity.setCurrentTheme(MainTheme)
+                parentActivity.recreate() // применяем для всей активити и для всех дочерних фрагментов
+            }
+            R.id.theme2 -> {
+                parentActivity.setCurrentTheme(SecondaryTheme)
+                parentActivity.recreate() // применяем для всей активити и для всех дочерних фрагментов
+            }
+        }
+
     }
 
     override fun onDestroy() {

@@ -1,32 +1,97 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.NasaIntegrationApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="android:statusBarColor">@color/red_500</item>
-        <item name="android:navigationBarColor">@color/red_500</item>
-        <item name="colorPrimary">@color/red_600</item>
+    <style name="BaseTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor">?attr/colorPrimary_400</item>
+        <item name="android:navigationBarColor">?attr/colorPrimary_400</item>
+
+        <item name="colorPrimary">?attr/colorPrimary_300</item>
+        <item name="colorPrimaryVariant">?attr/colorPrimaryDark</item>
         <item name="colorOnPrimary">@color/white</item>
-        <item name="colorPrimaryContainer">@color/red_100</item>
-        <item name="colorOnPrimaryContainer">@color/red_900</item>
-        <item name="colorPrimaryInverse">@color/red_200</item>
-        <item name="colorSecondary">@color/red_600</item>
+        <item name="colorPrimaryContainer">?attr/colorPrimary_100</item>
+        <item name="colorOnPrimaryContainer">?attr/colorPrimary_500</item>
+
+        <item name="colorError">?attr/colorPrimary_300</item>
+        <item name="colorOnError">#FFFFFF</item>
+        <item name="colorSurface">#FFFFFF</item>
+        <item name="colorOnSurface">#212121</item>
+
+        <item name="colorPrimaryInverse">?attr/colorPrimary_200</item>
+
+        <item name="colorSecondary">?attr/colorSecondary_300</item>
         <item name="colorOnSecondary">@color/white</item>
-        <item name="colorSecondaryContainer">@color/red_100</item>
-        <item name="colorOnSecondaryContainer">@color/red_900</item>
-        <item name="colorTertiary">@color/red_600</item>
-        <item name="colorOnTertiary">#712323</item>
-        <item name="colorTertiaryContainer">@color/red_100</item>
-        <item name="colorOnTertiaryContainer">@color/red_900</item>
+        <item name="colorSecondaryContainer">?attr/colorSecondary_100</item>
+        <item name="colorOnSecondaryContainer">?attr/colorSecondary_500</item>
+
+        <item name="colorTertiary">?attr/colorThird_300</item>
+        <item name="colorOnTertiary">@color/white</item>
+        <item name="colorTertiaryContainer">?attr/colorThird_100</item>
+        <item name="colorOnTertiaryContainer">?attr/colorThird_500</item>
+    </style>
+
+    <!-- Основная тема -->
+    <style name="MainTheme" parent="BaseTheme">
+        <item name="colorPrimary_100">@color/orange_100</item>
+        <item name="colorPrimary_200">@color/orange_200</item>
+        <item name="colorPrimary_300">@color/orange_300</item>
+        <item name="colorPrimary_500">@color/orange_500</item>
+
+        <item name="colorSecondary_100">@color/violet_100</item>
+        <item name="colorSecondary_300">@color/orange_200</item>
+        <item name="colorSecondary_500">@color/violet_500</item>
+
+        <item name="colorThird_100">@color/green_100</item>
+        <item name="colorThird_300">@color/green_300</item>
+        <item name="colorThird_500">@color/green_500</item>
 
         <item name="floatingActionButtonStyle">@style/customFAB</item>
         <item name="bottomAppBarStyle">@style/customABS</item>
+        <item name="circularProgressIndicatorStyle">@style/customProgressBar</item>
+        <!--
+                <item name="fontFamily">@font/roboto_mono</item>
+                <item name="android:fontFamily">@font/roboto_mono</item>-->
+    </style>
+
+    <!-- Второстепенная тема -->
+    <style name="SecondaryTheme" parent="BaseTheme">
+        <item name="colorPrimary_100">@color/green2_100</item>
+        <item name="colorPrimary_200">@color/green2_200</item>
+        <item name="colorPrimary_300">@color/green2_300</item>
+        <item name="colorPrimary_500">@color/green2_500</item>
+
+        <item name="colorSecondary_100">@color/pink_100</item>
+        <item name="colorSecondary_300">@color/green2_200</item>
+        <item name="colorSecondary_500">@color/pink_500</item>
+
+        <item name="colorThird_100">@color/orange2_100</item>
+        <item name="colorThird_300">@color/orange2_300</item>
+        <item name="colorThird_500">@color/orange2_500</item>
+
+        <item name="floatingActionButtonStyle">@style/customFAB2</item>
+        <item name="bottomAppBarStyle">@style/customABS2</item>
+        <item name="circularProgressIndicatorStyle">@style/customProgressBar2</item>
     </style>
 
     <style name="customFAB" parent="Widget.MaterialComponents.FloatingActionButton">
-        <item name="backgroundTint">@color/colorFAB</item>
+        <item name="backgroundTint">@color/orange_100</item>
     </style>
 
     <style name="customABS" parent="Widget.MaterialComponents.BottomAppBar">
-        <item name="backgroundTint">@color/customABS</item>
+        <item name="backgroundTint">@color/dark_gray</item>
     </style>
 
+    <style name="customProgressBar" parent="Widget.MaterialComponents.CircularProgressIndicator">
+        <item name="indicatorColor">@color/orange_100</item>
+    </style>
+
+    <style name="customFAB2" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="backgroundTint">@color/green2_100</item>
+    </style>
+
+    <style name="customABS2" parent="Widget.MaterialComponents.BottomAppBar">
+        <item name="backgroundTint">@color/dark_gray</item>
+    </style>
+
+    <style name="customProgressBar2" parent="Widget.MaterialComponents.CircularProgressIndicator">
+        <item name="indicatorColor">@color/green2_100</item>
+    </style>
 </resources>
