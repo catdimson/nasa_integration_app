@@ -20,41 +20,41 @@
 
     <!-- MainTheme -->
     <!-- primary colors -->
-    <color name="orange_100">#F2C970</color>
-    <color name="orange_200">#F2BA41</color>
-    <color name="orange_300">#E59E05</color>
-    <color name="orange_400">#AC842E</color>
-    <color name="orange_500">#956602</color>
+    <color name="violet_100">#AC66D5</color> <!-- orange -->
+    <color name="violet_200">#9D3ED5</color>
+    <color name="violet_300">#6F0AAA</color>
+    <color name="violet_400">#5E2580</color>
+    <color name="violet_500">#47036F</color>
     <!-- secondary colors -->
-    <color name="violet_100">#9369CD</color>
-    <color name="violet_200">#7D44CD</color>
-    <color name="violet_300">#4B119B</color>
-    <color name="violet_400">#472774</color>
-    <color name="violet_500">#2D0665</color>
+    <color name="blue_100">#5CCDC9</color> <!-- purple -->
+    <color name="blue_200">#33CDC7</color>
+    <color name="blue_300">#009B95</color>
+    <color name="blue_400">#1D7471</color>
+    <color name="blue_500">#006561</color>
     <!-- third colors -->
-    <color name="green_100">#5DCAAF</color>
-    <color name="green_200">#36CAA5</color>
-    <color name="green_300">#049570</color>
-    <color name="green_400">#1E6F5B</color>
-    <color name="green_500">#016149</color>
+    <color name="orange_100">#FFB173</color> <!-- green -->
+    <color name="orange_200">#FF9540</color>
+    <color name="orange_300">#FF7100</color>
+    <color name="orange_400">#BF6F30</color>
+    <color name="orange_500">#A64A00</color>
 
     <!-- SecondaryTheme -->
     <!-- primary colors -->
-    <color name="green2_100">#80EA69</color>
-    <color name="green2_200">#59EA3A</color>
-    <color name="green2_300">#25D500</color>
-    <color name="green2_400">#3DA028</color>
-    <color name="green2_500">#188A00</color>
+    <color name="red2_100">#F56E8B</color> <!-- green2 -->
+    <color name="red2_200">#F53D65</color>
+    <color name="red2_300">#EC0033</color>
+    <color name="red2_400">#B12C49</color>
+    <color name="red2_500">#990021</color>
     <!-- secondary colors -->
-    <color name="pink_100">#E266B7</color>
-    <color name="pink_200">#E238A7</color>
-    <color name="pink_300">#C50080</color>
-    <color name="pink_400">#94256D</color>
-    <color name="pink_500">#800053</color>
+    <color name="green_100">#61D7A4</color> <!-- pink -->
+    <color name="green_200">#36D792</color>
+    <color name="green_300">#00AF64</color>
+    <color name="green_400">#218359</color>
+    <color name="green_500">#007241</color>
     <!-- third colors -->
-    <color name="orange2_100">#FFAD73</color>
-    <color name="orange2_200">#FF8F40</color>
-    <color name="orange2_300">#FF6A00</color>
-    <color name="orange2_400">#BF6B30</color>
-    <color name="orange2_500">#A64500</color>
+    <color name="yellow_100">#D2F870</color> <!-- orange2 -->
+    <color name="yellow_200">#C4F83E</color>
+    <color name="yellow_300">#AEF100</color>
+    <color name="yellow_400">#8FB52D</color>
+    <color name="yellow_500">#719D00</color>
 </resources>

@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         return when (currentTheme) {
             MainTheme -> R.style.MainTheme
             SecondaryTheme -> R.style.SecondaryTheme
-            else -> 0
+            else -> R.style.MainTheme
         }
     }
 }

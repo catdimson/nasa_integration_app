@@ -46,9 +46,6 @@
         <item name="floatingActionButtonStyle">@style/customFAB</item>
         <item name="bottomAppBarStyle">@style/customABS</item>
         <item name="circularProgressIndicatorStyle">@style/customProgressBar</item>
-        <!--
-                <item name="fontFamily">@font/roboto_mono</item>
-                <item name="android:fontFamily">@font/roboto_mono</item>-->
     </style>
 
     <!-- Второстепенная тема -->
