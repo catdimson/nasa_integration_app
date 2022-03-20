@@ -5,11 +5,6 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-
-    <color name="color_gray">#66000000</color>
-
     <color name="red_100">#FBC7CC</color>
     <color name="red_200">#FB4844</color>
     <color name="red_500">#FF4234</color>
@@ -18,6 +13,48 @@
     <color name="red_800">#C82424</color>
     <color name="red_900">#AE0B0B</color>
 
-    <color name="colorFAB">#FF243AC8</color>
-    <color name="customABS">#FF282930</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="color_gray">#66000000</color>
+    <color name="dark_gray">#FF282930</color>
+
+    <!-- MainTheme -->
+    <!-- primary colors -->
+    <color name="violet_100">#AC66D5</color> <!-- orange -->
+    <color name="violet_200">#9D3ED5</color>
+    <color name="violet_300">#6F0AAA</color>
+    <color name="violet_400">#5E2580</color>
+    <color name="violet_500">#47036F</color>
+    <!-- secondary colors -->
+    <color name="blue_100">#5CCDC9</color> <!-- purple -->
+    <color name="blue_200">#33CDC7</color>
+    <color name="blue_300">#009B95</color>
+    <color name="blue_400">#1D7471</color>
+    <color name="blue_500">#006561</color>
+    <!-- third colors -->
+    <color name="orange_100">#FFB173</color> <!-- green -->
+    <color name="orange_200">#FF9540</color>
+    <color name="orange_300">#FF7100</color>
+    <color name="orange_400">#BF6F30</color>
+    <color name="orange_500">#A64A00</color>
+
+    <!-- SecondaryTheme -->
+    <!-- primary colors -->
+    <color name="red2_100">#F56E8B</color> <!-- green2 -->
+    <color name="red2_200">#F53D65</color>
+    <color name="red2_300">#EC0033</color>
+    <color name="red2_400">#B12C49</color>
+    <color name="red2_500">#990021</color>
+    <!-- secondary colors -->
+    <color name="green_100">#61D7A4</color> <!-- pink -->
+    <color name="green_200">#36D792</color>
+    <color name="green_300">#00AF64</color>
+    <color name="green_400">#218359</color>
+    <color name="green_500">#007241</color>
+    <!-- third colors -->
+    <color name="yellow_100">#D2F870</color> <!-- orange2 -->
+    <color name="yellow_200">#C4F83E</color>
+    <color name="yellow_300">#AEF100</color>
+    <color name="yellow_400">#8FB52D</color>
+    <color name="yellow_500">#719D00</color>
 </resources>

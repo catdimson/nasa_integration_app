@@ -11,6 +11,10 @@
     <string name="error">Ошибка</string>
     <string name="reload">Повторить</string>
 
+    <string name="swap_theme">Сменить тему</string>
+    <string name="theme1">Тема 1</string>
+    <string name="theme2">Тема 2</string>
+
     <!-- Текст для чипов, для выбора картинки дня -->
     <string name="yesterday">Вчера</string>
     <string name="today">Сегодня</string>

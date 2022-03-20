@@ -2,6 +2,7 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
@@ -11,6 +12,36 @@
         android:layout_height="match_parent"
         android:paddingStart="10dp"
         android:paddingEnd="10dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/theme1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="5dp"
+            android:layout_marginEnd="5dp"
+            android:text="@string/theme1"
+            app:icon="@drawable/ic_baseline_autorenew_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/inputLayout"
+            app:layout_constraintEnd_toStartOf="@+id/theme2"
+            tools:ignore="MissingConstraints" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/theme2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="5dp"
+            android:layout_marginStart="5dp"
+            android:paddingEnd="10dp"
+            android:text="@string/theme2"
+            app:icon="@drawable/ic_baseline_autorenew_24"
+            app:layout_constraintStart_toEndOf="@+id/theme1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/inputLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="MissingConstraints" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputLayout"
@@ -29,7 +60,7 @@
             app:layout_constraintBottom_toTopOf="@+id/chipGroup"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/theme1">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputEditText"

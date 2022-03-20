@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="colorPrimary_100" format="color" />
+    <attr name="colorPrimary_200" format="color" />
+    <attr name="colorPrimary_300" format="color" />
+    <attr name="colorPrimary_400" format="color" />
+    <attr name="colorPrimary_500" format="color" />
+
+    <attr name="colorSecondary_100" format="color" />
+    <attr name="colorSecondary_200" format="color" />
+    <attr name="colorSecondary_300" format="color" />
+    <attr name="colorSecondary_400" format="color" />
+    <attr name="colorSecondary_500" format="color" />
+
+    <attr name="colorThird_100" format="color" />
+    <attr name="colorThird_200" format="color" />
+    <attr name="colorThird_300" format="color" />
+    <attr name="colorThird_400" format="color" />
+    <attr name="colorThird_500" format="color" />
+</resources>
