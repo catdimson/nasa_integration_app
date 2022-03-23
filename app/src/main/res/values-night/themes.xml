@@ -46,6 +46,7 @@
         <item name="floatingActionButtonStyle">@style/customFAB</item>
         <item name="bottomAppBarStyle">@style/customABS</item>
         <item name="circularProgressIndicatorStyle">@style/customProgressBar</item>
+        <item name="bottomNavigationStyle">@style/customNightBottomNavigationView</item>
     </style>
 
     <!-- Второстепенная тема -->
@@ -66,6 +67,7 @@
         <item name="floatingActionButtonStyle">@style/customFAB2</item>
         <item name="bottomAppBarStyle">@style/customABS2</item>
         <item name="circularProgressIndicatorStyle">@style/customProgressBar2</item>
+        <item name="bottomNavigationStyle">@style/customNightBottomNavigationView2</item>
     </style>
 
     <style name="customFAB" parent="Widget.MaterialComponents.FloatingActionButton">
@@ -80,6 +82,14 @@
         <item name="indicatorColor">@color/orange_100</item>
     </style>
 
+    <style name="customNightBottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemIconSize">26dp</item>
+        <item name="itemIconTint">@color/orange_200</item>
+        <item name="itemTextColor">@color/light_gray</item>
+        <item name="backgroundTint">@color/dark_gray</item>
+        <item name="itemRippleColor">@color/orange2_400</item>
+    </style>
+
     <style name="customFAB2" parent="Widget.MaterialComponents.FloatingActionButton">
         <item name="backgroundTint">@color/green2_100</item>
     </style>
@@ -91,4 +101,13 @@
     <style name="customProgressBar2" parent="Widget.MaterialComponents.CircularProgressIndicator">
         <item name="indicatorColor">@color/green2_100</item>
     </style>
+
+    <style name="customNightBottomNavigationView2" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemIconSize">20dp</item>
+        <item name="itemIconTint">@color/green2_300</item>
+        <item name="itemTextColor">@color/light_gray</item>
+        <item name="backgroundTint">@color/dark_gray</item>
+        <item name="itemRippleColor">@color/green2_500</item>
+    </style>
+
 </resources>
