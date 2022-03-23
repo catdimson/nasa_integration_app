@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainMarsPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp">
+
+        <!--Камера-->
+        <TextView
+            android:id="@+id/cameraHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginTop="5dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Информация о снимке"
+            android:text="@string/photo_mars_info" />
+
+        <TextView
+            android:id="@+id/cameraNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            app:layout_constraintTop_toBottomOf="@id/cameraHeader"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Название камеры: "
+            android:text="@string/photo_mars_camera_name"/>
+
+        <TextView
+            android:id="@+id/cameraName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            app:layout_constraintTop_toBottomOf="@id/cameraNameLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textStyle="italic"
+            tools:text="Название камеры" />
+
+        <TextView
+            android:id="@+id/cameraFullNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            app:layout_constraintTop_toBottomOf="@id/cameraName"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Полное название камеры: "
+            android:text="@string/photo_mars_camera_full_name"/>
+
+        <TextView
+            android:id="@+id/cameraFullName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            app:layout_constraintTop_toBottomOf="@id/cameraFullNameLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textStyle="italic"
+            tools:text="Полное название камеры" />
+
+        <!--Марсоход-->
+        <TextView
+            android:id="@+id/roverHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginTop="5dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cameraFullName"
+            tools:text="Информация о марсоходе"
+            android:text="@string/photo_mars_rover_info" />
+
+        <TextView
+            android:id="@+id/roverNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            app:layout_constraintTop_toBottomOf="@id/roverHeader"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Название марсохода: "
+            android:text="@string/photo_mars_rover_name"/>
+
+        <TextView
+            android:id="@+id/roverName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            app:layout_constraintTop_toBottomOf="@id/roverNameLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textStyle="italic"
+            tools:text="Название марсохода" />
+
+        <TextView
+            android:id="@+id/roverLandingDateLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            app:layout_constraintTop_toBottomOf="@id/roverName"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Дата посадки: "
+            android:text="@string/photo_mars_landing_date"/>
+
+        <TextView
+            android:id="@+id/roverLandingDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            app:layout_constraintTop_toBottomOf="@id/roverLandingDateLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textStyle="italic"
+            tools:text="Дата посадки" />
+
+        <TextView
+            android:id="@+id/roverStatusLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            app:layout_constraintTop_toBottomOf="@id/roverLandingDate"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Статус аппарата: "
+            android:text="@string/photo_mars_status_rover"/>
+
+        <TextView
+            android:id="@+id/roverStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            app:layout_constraintTop_toBottomOf="@id/roverStatusLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textStyle="italic"
+            tools:text="Статус" />
+
+        <!--Фото-->
+        <ru.dkotik.nasaintegrationapp.utils.EquilateralImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="@string/photo_of_mars"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/roverStatus"
+            app:srcCompat="@drawable/ic_no_photo_vector" />
+
+        <TextView
+            android:id="@+id/photoMarsDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:textStyle="italic"
+            android:paddingEnd="10dp"
+            app:layout_constraintTop_toBottomOf="@id/imageView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        android:id="@+id/includedLoadingLayout"
+        layout="@layout/loading_layout" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

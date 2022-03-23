@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/bottom_view_main"
+        android:icon="@drawable/ic_space_main"
+        app:tooltipText="Астрономисческая картинка дня"
+        android:enabled="true"
+        android:title="@string/page_main" />
+
+    <item
+        android:id="@+id/bottom_view_marsohod"
+        android:icon="@drawable/ic_space_mars_photo_alien"
+        app:tooltipText="Фотографии марсохода"
+        android:enabled="true"
+        android:title="@string/page_marsohod" />
+
+    <item
+        android:id="@+id/bottom_view_epic_earth"
+        android:icon="@drawable/ic_space_telescope"
+        app:tooltipText="Камера полихроматического изображения Земли"
+        android:enabled="true"
+        android:title="@string/page_epic_earth" />
+
+    <item
+        android:id="@+id/bottom_view_asteroid"
+        android:icon="@drawable/ic_space_comet"
+        app:tooltipText=""
+        android:enabled="true"
+        android:title="@string/page_asteroid" />
+
+    <item
+        android:id="@+id/bottom_view_weather"
+        android:icon="@drawable/ic_space_weather"
+        app:tooltipText=""
+        android:enabled="true"
+        android:title="@string/page_weather" />
+
+</menu>

@@ -57,4 +57,7 @@
     <color name="yellow_300">#AEF100</color>
     <color name="yellow_400">#8FB52D</color>
     <color name="yellow_500">#719D00</color>
+
+    <color name="colorAccent">#AC842E</color>
+    <color name="colorAccent40Alfa">#66AC842E</color>
 </resources>

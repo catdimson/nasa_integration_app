@@ -57,4 +57,7 @@
     <color name="orange2_300">#FF6A00</color>
     <color name="orange2_400">#BF6B30</color>
     <color name="orange2_500">#A64500</color>
+
+    <color name="colorAccent">#AC842E</color>
+    <color name="colorAccent40Alfa">#66AC842E</color>
 </resources>
