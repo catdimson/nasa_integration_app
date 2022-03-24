@@ -17,6 +17,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="color_gray">#66000000</color>
     <color name="dark_gray">#FF282930</color>
+    <color name="light_gray">#6B6E85</color>
+    <color name="very_light_gray">#FFDADBE4</color>
 
     <!-- MainTheme -->
     <!-- primary colors -->
@@ -25,6 +27,7 @@
     <color name="violet_300">#6F0AAA</color>
     <color name="violet_400">#5E2580</color>
     <color name="violet_500">#47036F</color>
+    <color name="violet_600">#39025A</color>
     <!-- secondary colors -->
     <color name="blue_100">#5CCDC9</color> <!-- purple -->
     <color name="blue_200">#33CDC7</color>
@@ -57,4 +60,7 @@
     <color name="yellow_300">#AEF100</color>
     <color name="yellow_400">#8FB52D</color>
     <color name="yellow_500">#719D00</color>
+
+    <color name="colorAccent">#AC842E</color>
+    <color name="colorAccent40Alfa">#66AC842E</color>
 </resources>

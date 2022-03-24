@@ -11,19 +11,19 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import coil.api.load
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import ru.dkotik.nasaintegrationapp.R
 import ru.dkotik.nasaintegrationapp.databinding.FragmentMainBinding
+import ru.dkotik.nasaintegrationapp.dto.pod.PODServerResponseData
 import ru.dkotik.nasaintegrationapp.utils.showSnackBarWithResources
 import ru.dkotik.nasaintegrationapp.view.MainActivity
 import ru.dkotik.nasaintegrationapp.view.MainTheme
 import ru.dkotik.nasaintegrationapp.view.SecondaryTheme
 import ru.dkotik.nasaintegrationapp.view.chips.ChipsFragment
-import ru.dkotik.nasaintegrationapp.viewmodel.PictureOfTheDayDataState
+import ru.dkotik.nasaintegrationapp.viewmodel.AppState
 import ru.dkotik.nasaintegrationapp.viewmodel.PictureOfTheDayViewModel
 import java.text.SimpleDateFormat
 import java.util.*
@@ -62,7 +62,7 @@ class PictureOfTheDayFragment: Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setBottomAppBar(view)
+//        setBottomAppBar(view)
 
         binding.theme1.setOnClickListener(this)
         binding.theme2.setOnClickListener(this)
@@ -109,22 +109,29 @@ class PictureOfTheDayFragment: Fragment(), View.OnClickListener {
         }
     }
 
-    private fun renderData(data: PictureOfTheDayDataState) {
+    private fun renderData(data: AppState) {
         when (data) {
-            is PictureOfTheDayDataState.Success -> {
+            is AppState.SuccessPOD -> {
                 val serverResponseData = data.serverResponseData
                 val urlImage = serverResponseData.url
+
+                if (serverResponseData.hdurl.isNullOrEmpty()) {
+                    rebuildViewUnderVideo(serverResponseData)
+                } else {
+                    binding.imageView.load(urlImage)
+                }
+
                 binding.includedLoadingLayout.loadingLayout.isVisible = false
                 binding.bsl.bottomSheetDescriptionHeader.text = serverResponseData.title
                 binding.bsl.bottomSheetDescription.text = serverResponseData.explanation
                 binding.imageView.load(urlImage)
             }
-            is PictureOfTheDayDataState.Loading -> {
+            is AppState.Loading -> {
                 binding.includedLoadingLayout.loadingLayout.isVisible = true
             }
-            is PictureOfTheDayDataState.Error -> {
+            is AppState.Error -> {
                 binding.includedLoadingLayout.loadingLayout.isVisible = false
-                binding.fab.showSnackBarWithResources(
+                binding.main.showSnackBarWithResources(
                     fragment = this,
                     text = R.string.error,
                     actionText = R.string.reload,
@@ -134,7 +141,7 @@ class PictureOfTheDayFragment: Fragment(), View.OnClickListener {
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+    /*override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.menu_bottom_bar, menu)
     }
@@ -156,9 +163,9 @@ class PictureOfTheDayFragment: Fragment(), View.OnClickListener {
             }
         }
         return super.onOptionsItemSelected(item)
-    }
+    }*/
 
-    private fun setBottomAppBar(view: View) {
+    /*private fun setBottomAppBar(view: View) {
         val context = activity as MainActivity
         context.setSupportActionBar(view.findViewById(R.id.bottom_app_bar))
         setHasOptionsMenu(true)
@@ -182,6 +189,15 @@ class PictureOfTheDayFragment: Fragment(), View.OnClickListener {
                 binding.bottomAppBar.replaceMenu(R.menu.menu_bottom_bar)
             }
             isMain = !isMain
+        }
+    }*/
+
+    private fun rebuildViewUnderVideo(data: PODServerResponseData) {
+        binding.imageView.isVisible = false
+        binding.linkToVideoHeader.isVisible = true
+        binding.btnLinkToVideo.isVisible = true
+        binding.btnLinkToVideo.setOnClickListener {
+            startActivity(Intent(Intent.ACTION_VIEW).apply { Uri.parse(data.url) })
         }
     }
 

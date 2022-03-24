@@ -25,6 +25,7 @@
     <color name="orange_300">#E59E05</color>
     <color name="orange_400">#AC842E</color>
     <color name="orange_500">#956602</color>
+    <color name="orange_600">#785202</color>
     <!-- secondary colors -->
     <color name="violet_100">#9369CD</color>
     <color name="violet_200">#7D44CD</color>
@@ -57,4 +58,7 @@
     <color name="orange2_300">#FF6A00</color>
     <color name="orange2_400">#BF6B30</color>
     <color name="orange2_500">#A64500</color>
+
+    <color name="colorAccent">#AC842E</color>
+    <color name="colorAccent40Alfa">#66AC842E</color>
 </resources>
