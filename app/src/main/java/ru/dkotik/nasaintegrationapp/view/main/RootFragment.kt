@@ -57,7 +57,7 @@ class RootFragment: Fragment() {
                     true
                 }
                 R.id.bottom_view_epic_earth -> {
-                    navigationTo(PictureOfTheDayFragment.newInstance())
+                    navigationTo(EpicEarthFragment.newInstance())
                     true
                 }
                 R.id.bottom_view_asteroid -> {

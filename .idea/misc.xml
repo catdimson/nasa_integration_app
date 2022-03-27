@@ -16,18 +16,24 @@
         <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/drawable/ic_settings_menu.xml" value="0.23333333333333334" />
         <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/drawable/ic_settings_menu_white.xml" value="0.23333333333333334" />
         <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/drawable/ic_wikipedia.xml" value="0.25416666666666665" />
+        <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/drawable/ic_wikipedia_white.xml" value="0.2598958333333333" />
         <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/layout/activity_main.xml" value="0.20520833333333333" />
         <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/layout/bottom_navigation_layout.xml" value="0.20677083333333332" />
         <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/layout/bottom_sheet_layout.xml" value="0.1" />
+        <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/layout/fragment_asteroid.xml" value="0.24375" />
         <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/layout/fragment_chips.xml" value="0.25625" />
         <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/layout/fragment_earth.xml" value="0.20520833333333333" />
-        <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/layout/fragment_main.xml" value="0.33" />
-        <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/layout/fragment_page_mars_photo.xml" value="0.45466321243523317" />
+        <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/layout/fragment_epic_eight.xml" value="0.24375" />
+        <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/layout/fragment_main.xml" value="0.1" />
+        <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/layout/fragment_main_start.xml" value="0.24375" />
+        <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/layout/fragment_page_mars_photo.xml" value="0.1" />
         <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/layout/loading_layout.xml" value="0.23854166666666668" />
         <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/menu-night/menu_bottom_bar.xml" value="0.2171875" />
         <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/menu/menu_bottom_bar.xml" value="0.20677083333333332" />
         <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/menu/menu_bottom_bar_other_screen.xml" value="0.20677083333333332" />
         <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.20677083333333332" />
+        <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/menu/menu_main_bnv.xml" value="0.1" />
+        <entry key="..\:/ALLGeekBrains/GB_HomeWork/NasaIntegrationApp/app/src/main/res/xml/motion_scene.xml" value="0.24375" />
       </map>
     </option>
   </component>
