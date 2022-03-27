@@ -11,22 +11,82 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingStart="10dp"
-
         android:paddingEnd="10dp">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVerticalLeftBorder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.02" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVerticalRightBorder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.98" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVerticalMiddleAxis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVerticalAxis25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVerticalAxis75"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.75" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glHorizontalTopBorder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.02" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glHorizontalBottomBorder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.98" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glHorizontalMiddleAxis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupThemeButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="theme1, theme2" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/theme1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="5dp"
+            android:layout_marginEnd="10dp"
             android:paddingStart="10dp"
             android:paddingEnd="5dp"
-            android:layout_marginTop="15dp"
             android:text="@string/theme1"
             app:icon="@drawable/ic_baseline_autorenew_24"
             app:layout_constraintEnd_toStartOf="@+id/theme2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/glVerticalLeftBorder"
+            app:layout_constraintTop_toTopOf="@+id/glHorizontalTopBorder"
             tools:ignore="MissingConstraints" />
 
         <com.google.android.material.button.MaterialButton
@@ -34,14 +94,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:paddingStart="5dp"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="10dp"
             android:paddingEnd="10dp"
             android:text="@string/theme2"
             app:icon="@drawable/ic_baseline_autorenew_24"
             app:layout_constraintStart_toEndOf="@+id/theme1"
-            app:layout_constraintTop_toTopOf="@+id/theme1"
+            app:layout_constraintTop_toTopOf="@+id/glHorizontalTopBorder"
             app:layout_constraintBottom_toBottomOf="@+id/theme1"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/glVerticalRightBorder"
             tools:ignore="MissingConstraints" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -58,8 +118,8 @@
             app:endIconDrawable="@drawable/ic_wikipedia"
             app:endIconMode="custom"
             app:helperText="@string/wiki_helper_text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/glVerticalRightBorder"
+            app:layout_constraintStart_toStartOf="@+id/glVerticalLeftBorder"
             app:layout_constraintTop_toBottomOf="@+id/theme1">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -74,8 +134,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/glVerticalAxis75"
+            app:layout_constraintStart_toStartOf="@+id/glVerticalAxis25"
             app:layout_constraintTop_toBottomOf="@+id/inputLayout"
             app:singleSelection="true">
 
@@ -96,44 +156,49 @@
 
         </com.google.android.material.chip.ChipGroup>
 
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupWatchVideo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="linkToVideoHeader, btnLinkToVideo" />
+
         <TextView
             android:id="@+id/linkToVideoHeader"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:textAlignment="center"
             android:layout_marginTop="50dp"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
-            android:visibility="gone"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/glVerticalRightBorder"
+            app:layout_constraintStart_toStartOf="@+id/glVerticalLeftBorder"
             app:layout_constraintTop_toBottomOf="@id/chipGroup"
-            tools:text="Уууупс. Кажется это видео. Вы можете просмотреть его, нажав на кнопку"
+            tools:text="Уууупс. Кажется это видео. Вы можете просмотреть его, нажав на кнопку ниже"
             android:text="@string/link_to_video_text" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnLinkToVideo"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
             android:text="@string/btn_link_to_video"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/glVerticalAxis25"
             app:layout_constraintTop_toBottomOf="@id/linkToVideoHeader"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:visibility="gone"/>
+            app:layout_constraintEnd_toEndOf="@+id/glVerticalAxis75" />
 
         <ru.dkotik.nasaintegrationapp.utils.EquilateralImageView
             android:id="@+id/imageView"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
             android:layout_marginTop="15dp"
             android:contentDescription="@string/photo_of_the_day_stub"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/glVerticalRightBorder"
+            app:layout_constraintStart_toStartOf="@+id/glVerticalLeftBorder"
             app:layout_constraintTop_toBottomOf="@+id/chipGroup"
             app:srcCompat="@drawable/ic_no_photo_vector" />
 
@@ -142,22 +207,6 @@
     <include
         android:id="@+id/bsl"
         layout="@layout/bottom_sheet_layout" />
-
-    <!--<com.google.android.material.bottomappbar.BottomAppBar
-        android:id="@+id/bottom_app_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        app:fabAlignmentMode="center"
-        app:navigationIcon="@drawable/ic_hamburger_menu_bottom_bar" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_anchor="@id/bottom_app_bar"
-        app:srcCompat="@drawable/ic_plus_fab"
-        app:tint="#FFFFFF" />-->
 
     <include
         android:id="@+id/includedLoadingLayout"

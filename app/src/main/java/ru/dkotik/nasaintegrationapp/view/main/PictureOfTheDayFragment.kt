@@ -194,8 +194,7 @@ class PictureOfTheDayFragment: Fragment(), View.OnClickListener {
 
     private fun rebuildViewUnderVideo(data: PODServerResponseData) {
         binding.imageView.isVisible = false
-        binding.linkToVideoHeader.isVisible = true
-        binding.btnLinkToVideo.isVisible = true
+        binding.groupWatchVideo.isVisible = true
         binding.btnLinkToVideo.setOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW).apply { Uri.parse(data.url) })
         }
