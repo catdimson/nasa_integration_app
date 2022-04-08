@@ -17,6 +17,7 @@ import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import ru.dkotik.nasaintegrationapp.R
 import ru.dkotik.nasaintegrationapp.databinding.FragmentMainBinding
+import ru.dkotik.nasaintegrationapp.databinding.FragmentMainStartBinding
 import ru.dkotik.nasaintegrationapp.dto.pod.PODServerResponseData
 import ru.dkotik.nasaintegrationapp.utils.showSnackBarWithResources
 import ru.dkotik.nasaintegrationapp.view.MainActivity
@@ -29,10 +30,10 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class PictureOfTheDayFragment: Fragment(), View.OnClickListener {
-    private var _binding: FragmentMainBinding? = null
-    val binding: FragmentMainBinding
+
+    private var _binding: FragmentMainStartBinding? = null
+    val binding: FragmentMainStartBinding
         get () = _binding!!
-    var isMain: Boolean = true
     private lateinit var parentActivity: MainActivity
 
     companion object {
@@ -50,7 +51,7 @@ class PictureOfTheDayFragment: Fragment(), View.OnClickListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentMainBinding.inflate(inflater, container, false)
+        _binding = FragmentMainStartBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -61,8 +62,6 @@ class PictureOfTheDayFragment: Fragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-//        setBottomAppBar(view)
 
         binding.theme1.setOnClickListener(this)
         binding.theme2.setOnClickListener(this)
@@ -141,61 +140,9 @@ class PictureOfTheDayFragment: Fragment(), View.OnClickListener {
         }
     }
 
-    /*override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.menu_bottom_bar, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
-            R.id.app_bar_fav -> Toast.makeText(requireContext(), "app_bar_fav", Toast.LENGTH_SHORT).show()
-            R.id.app_bar_settings -> {
-                requireActivity().supportFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.container, ChipsFragment.newInstance())
-                    .addToBackStack("")
-                    .commit()
-            }
-            android.R.id.home -> {
-                activity?.let {
-                    BottomNavigationDrawerFragment().show(it.supportFragmentManager, "tag")
-                }
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }*/
-
-    /*private fun setBottomAppBar(view: View) {
-        val context = activity as MainActivity
-        context.setSupportActionBar(view.findViewById(R.id.bottom_app_bar))
-        setHasOptionsMenu(true)
-
-        binding.fab.setOnClickListener {
-            if (isMain) {
-                binding.bottomAppBar.navigationIcon = null
-                binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_END
-                binding.fab.setImageDrawable(
-                    ContextCompat.getDrawable(context,
-                    R.drawable.ic_back_fab)
-                )
-                binding.bottomAppBar.replaceMenu(R.menu.menu_bottom_bar_other_screen)
-            } else {
-                binding.bottomAppBar.navigationIcon = ContextCompat.getDrawable(context, R.drawable.ic_hamburger_menu_bottom_bar)
-                binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_CENTER
-                binding.fab.setImageDrawable(
-                    ContextCompat.getDrawable(context,
-                    R.drawable.ic_plus_fab)
-                )
-                binding.bottomAppBar.replaceMenu(R.menu.menu_bottom_bar)
-            }
-            isMain = !isMain
-        }
-    }*/
-
     private fun rebuildViewUnderVideo(data: PODServerResponseData) {
         binding.imageView.isVisible = false
-        binding.linkToVideoHeader.isVisible = true
-        binding.btnLinkToVideo.isVisible = true
+        binding.groupWatchVideo.isVisible = true
         binding.btnLinkToVideo.setOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW).apply { Uri.parse(data.url) })
         }
