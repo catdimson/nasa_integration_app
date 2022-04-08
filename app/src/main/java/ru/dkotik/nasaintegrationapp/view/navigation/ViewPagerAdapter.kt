@@ -1,6 +1,5 @@
 package ru.dkotik.nasaintegrationapp.view.navigation
 
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 

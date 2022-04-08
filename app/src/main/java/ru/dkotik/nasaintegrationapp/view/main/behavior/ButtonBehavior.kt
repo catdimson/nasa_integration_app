@@ -7,6 +7,9 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.google.android.material.appbar.AppBarLayout
 import java.lang.Math.abs
 
+const val BAR_HEIGHT_PROPORTION = 2/3
+const val HEIGHT_DENOMINATOR = 2
+
 class ButtonBehavior(context: Context, attr: AttributeSet?=null): CoordinatorLayout.Behavior<View>(context,attr) {
 
     override fun layoutDependsOn(
@@ -26,11 +29,11 @@ class ButtonBehavior(context: Context, attr: AttributeSet?=null): CoordinatorLay
         val barHeight = bar.height.toFloat()
         val barY = bar.y
 
-        if(abs(barY)>(barHeight*2/3)){
+        if (abs(barY) > (barHeight * BAR_HEIGHT_PROPORTION)) {
             child.visibility = View.GONE
-        }else{
+        } else {
             child.visibility = View.VISIBLE
-            child.alpha = ((barHeight*2/3)-abs(barY/2))/(barHeight*2/3)
+            child.alpha = ((barHeight * BAR_HEIGHT_PROPORTION) - abs(barY / HEIGHT_DENOMINATOR)) / (barHeight * BAR_HEIGHT_PROPORTION)
         }
 
         return super.onDependentViewChanged(parent, child, dependency)
