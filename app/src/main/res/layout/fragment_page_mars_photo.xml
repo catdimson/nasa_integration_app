@@ -216,18 +216,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:constraint_referenced_ids="imageView, photoMarsDate" />
+
         <!--Фото-->
         <ru.dkotik.nasaintegrationapp.utils.EquilateralImageView
             android:id="@+id/imageView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:layout_marginTop="15dp"
             android:contentDescription="@string/photo_of_mars"
             app:layout_constraintEnd_toEndOf="@+id/glVerticalRightBorder"
             app:layout_constraintStart_toStartOf="@+id/glVerticalLeftBorder"
             app:layout_constraintTop_toBottomOf="@id/roverStatus"
-            app:srcCompat="@drawable/ic_no_photo_vector" />
+            app:srcCompat="@drawable/ic_no_photo_vector"/>
 
         <TextView
             android:id="@+id/photoMarsDate"

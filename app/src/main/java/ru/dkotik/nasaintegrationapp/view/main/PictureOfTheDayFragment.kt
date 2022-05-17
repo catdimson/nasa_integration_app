@@ -4,26 +4,26 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.transition.ChangeImageTransform
+import android.transition.TransitionManager
 import android.util.Log
-import android.view.*
-import android.widget.Toast
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import coil.api.load
-import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import ru.dkotik.nasaintegrationapp.R
-import ru.dkotik.nasaintegrationapp.databinding.FragmentMainBinding
 import ru.dkotik.nasaintegrationapp.databinding.FragmentMainStartBinding
 import ru.dkotik.nasaintegrationapp.dto.pod.PODServerResponseData
 import ru.dkotik.nasaintegrationapp.utils.showSnackBarWithResources
 import ru.dkotik.nasaintegrationapp.view.MainActivity
 import ru.dkotik.nasaintegrationapp.view.MainTheme
 import ru.dkotik.nasaintegrationapp.view.SecondaryTheme
-import ru.dkotik.nasaintegrationapp.view.chips.ChipsFragment
 import ru.dkotik.nasaintegrationapp.viewmodel.AppState
 import ru.dkotik.nasaintegrationapp.viewmodel.PictureOfTheDayViewModel
 import java.text.SimpleDateFormat
@@ -32,6 +32,8 @@ import java.util.*
 class PictureOfTheDayFragment: Fragment(), View.OnClickListener {
 
     private var _binding: FragmentMainStartBinding? = null
+    private var isScaleImage = false
+
     val binding: FragmentMainStartBinding
         get () = _binding!!
     private lateinit var parentActivity: MainActivity
@@ -118,6 +120,8 @@ class PictureOfTheDayFragment: Fragment(), View.OnClickListener {
                     rebuildViewUnderVideo(serverResponseData)
                 } else {
                     binding.imageView.load(urlImage)
+                    isScaleImage = false
+                    setImageAnimation()
                 }
 
                 binding.bsl.bottomSheetDescriptionHeader.text = serverResponseData.title
@@ -151,6 +155,16 @@ class PictureOfTheDayFragment: Fragment(), View.OnClickListener {
         val format1 = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
         format1.timeZone = TimeZone.getTimeZone("EST")
         return format1.format(currentDate.time)
+    }
+
+    private fun setImageAnimation() {
+        binding.imageView.setOnClickListener {
+            val changeBounds = ChangeImageTransform()
+            changeBounds.duration = 1000
+            TransitionManager.beginDelayedTransition(binding.root, changeBounds)
+            isScaleImage = !isScaleImage
+            binding.imageView.scaleType = if (isScaleImage) ImageView.ScaleType.CENTER_CROP else ImageView.ScaleType.CENTER_INSIDE
+        }
     }
 
     override fun onClick(v: View) {

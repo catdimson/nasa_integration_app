@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import coil.api.load
@@ -19,6 +18,7 @@ import ru.dkotik.nasaintegrationapp.viewmodel.MarsPictureViewModel
 class MarsPictureFragment: Fragment() {
 
     private var _binding: FragmentPageMarsPhotoBinding? = null
+
     val binding: FragmentPageMarsPhotoBinding
         get () = _binding!!
 
