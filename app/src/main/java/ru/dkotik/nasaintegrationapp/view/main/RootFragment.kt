@@ -5,9 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import ru.dkotik.nasaintegrationapp.R
-import ru.dkotik.nasaintegrationapp.databinding.FragmentMainBinding
 import ru.dkotik.nasaintegrationapp.databinding.FragmentRootBinding
 
 class RootFragment: Fragment() {
@@ -75,6 +73,15 @@ class RootFragment: Fragment() {
     }
 
     private fun navigationTo(f: Fragment) {
-        parentFragmentManager.beginTransaction().replace(R.id.container, f).commit()
+        parentFragmentManager.beginTransaction()
+            .setCustomAnimations(
+                R.anim.fragment_common_slide_in,
+                R.anim.fragment_common_fade_out,
+                R.anim.fragment_common_slide_out,
+                R.anim.fragment_common_fade_in
+            )
+            .replace(R.id.container, f)
+            .addToBackStack(null)
+            .commit()
     }
 }

@@ -233,10 +233,4 @@
         android:id="@+id/bsl"
         layout="@layout/bottom_sheet_layout" />
 
-    <include
-        android:id="@+id/includedLoadingLayout"
-        layout="@layout/loading_layout"
-        app:layout_anchor="@+id/main"
-        app:layout_anchorGravity="center" />
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

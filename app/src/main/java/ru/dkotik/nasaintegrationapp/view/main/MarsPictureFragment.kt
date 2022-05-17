@@ -55,14 +55,11 @@ class MarsPictureFragment: Fragment() {
                 } else {
                     val responseData = data.serverResponseData.photos.first()
                     fullFields(responseData)
-                    binding.includedLoadingLayout.loadingLayout.isVisible = false
                 }
             }
             is AppState.Loading -> {
-                binding.includedLoadingLayout.loadingLayout.isVisible = true
             }
             is AppState.Error -> {
-                binding.includedLoadingLayout.loadingLayout.isVisible = false
                 binding.mainMarsPhoto.showSnackBarWithResources(
                     fragment = this,
                     text = R.string.error,

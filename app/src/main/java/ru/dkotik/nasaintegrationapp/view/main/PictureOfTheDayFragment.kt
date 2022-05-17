@@ -120,16 +120,13 @@ class PictureOfTheDayFragment: Fragment(), View.OnClickListener {
                     binding.imageView.load(urlImage)
                 }
 
-                binding.includedLoadingLayout.loadingLayout.isVisible = false
                 binding.bsl.bottomSheetDescriptionHeader.text = serverResponseData.title
                 binding.bsl.bottomSheetDescription.text = serverResponseData.explanation
                 binding.imageView.load(urlImage)
             }
             is AppState.Loading -> {
-                binding.includedLoadingLayout.loadingLayout.isVisible = true
             }
             is AppState.Error -> {
-                binding.includedLoadingLayout.loadingLayout.isVisible = false
                 binding.main.showSnackBarWithResources(
                     fragment = this,
                     text = R.string.error,
