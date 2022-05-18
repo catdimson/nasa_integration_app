@@ -31,10 +31,10 @@
         android:title="@string/page_asteroid" />
 
     <item
-        android:id="@+id/bottom_view_weather"
+        android:id="@+id/bottom_view_animations_rotate_fab"
         android:icon="@drawable/ic_space_weather"
         app:tooltipText=""
         android:enabled="true"
-        android:title="@string/page_weather" />
+        android:title="@string/page_animations_rotate_fab" />
 
 </menu>

@@ -62,8 +62,8 @@ class RootFragment: Fragment() {
                     navigationTo(PictureOfTheDayFragment.newInstance())
                     true
                 }
-                R.id.bottom_view_weather -> {
-                    navigationTo(PictureOfTheDayFragment.newInstance())
+                R.id.bottom_view_animations_rotate_fab -> {
+                    navigationTo(AnimationsRotateFabFragment.newInstance())
                     true
                 }
                 else -> true
