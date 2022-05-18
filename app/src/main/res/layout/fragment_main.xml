@@ -218,6 +218,7 @@
         <ru.dkotik.nasaintegrationapp.utils.EquilateralImageView
             android:id="@+id/imageView"
             android:layout_width="0dp"
+            android:alpha="0"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
             android:layout_marginTop="15dp"

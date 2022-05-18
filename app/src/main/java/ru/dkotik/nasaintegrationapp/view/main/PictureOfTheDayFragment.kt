@@ -33,6 +33,7 @@ class PictureOfTheDayFragment: Fragment(), View.OnClickListener {
 
     private var _binding: FragmentMainStartBinding? = null
     private var isScaleImage = false
+    private val DURATION_ANIMATION = 1000L
 
     val binding: FragmentMainStartBinding
         get () = _binding!!
@@ -101,9 +102,11 @@ class PictureOfTheDayFragment: Fragment(), View.OnClickListener {
         binding.chipGroup.setOnCheckedChangeListener { group, checkedId ->
             when(checkedId) {
                 R.id.yesterday -> {
+                    runDisappearanceAnimation(binding.imageView)
                     viewModel.sendServerRequest(takeDate(-1))
                 }
                 R.id.today -> {
+                    runDisappearanceAnimation(binding.imageView)
                     viewModel.sendServerRequest()
                 }
             }
@@ -111,6 +114,8 @@ class PictureOfTheDayFragment: Fragment(), View.OnClickListener {
     }
 
     private fun renderData(data: AppState) {
+        resetAlphaToZero(binding.imageView)
+
         when (data) {
             is AppState.SuccessPOD -> {
                 val serverResponseData = data.serverResponseData
@@ -120,17 +125,20 @@ class PictureOfTheDayFragment: Fragment(), View.OnClickListener {
                     rebuildViewUnderVideo(serverResponseData)
                 } else {
                     binding.imageView.load(urlImage)
+                    runAppearanceAnimation(binding.imageView)
                     isScaleImage = false
-                    setImageAnimation()
+                    setImageScaleAnimation()
                 }
 
                 binding.bsl.bottomSheetDescriptionHeader.text = serverResponseData.title
                 binding.bsl.bottomSheetDescription.text = serverResponseData.explanation
-                binding.imageView.load(urlImage)
             }
             is AppState.Loading -> {
             }
             is AppState.Error -> {
+                binding.imageView.setImageResource(R.drawable.error_load)
+                runAppearanceAnimation(binding.imageView)
+
                 binding.main.showSnackBarWithResources(
                     fragment = this,
                     text = R.string.error,
@@ -157,7 +165,7 @@ class PictureOfTheDayFragment: Fragment(), View.OnClickListener {
         return format1.format(currentDate.time)
     }
 
-    private fun setImageAnimation() {
+    private fun setImageScaleAnimation() {
         binding.imageView.setOnClickListener {
             val changeBounds = ChangeImageTransform()
             changeBounds.duration = 1000
@@ -165,6 +173,22 @@ class PictureOfTheDayFragment: Fragment(), View.OnClickListener {
             isScaleImage = !isScaleImage
             binding.imageView.scaleType = if (isScaleImage) ImageView.ScaleType.CENTER_CROP else ImageView.ScaleType.CENTER_INSIDE
         }
+    }
+
+    private fun resetAlphaToZero(view: View) {
+        view.alpha = 0f
+    }
+
+    private fun runAppearanceAnimation(view: View) {
+        view.animate()
+            .alpha(1.0f)
+            .setDuration(DURATION_ANIMATION)
+    }
+
+    private fun runDisappearanceAnimation(view: View) {
+        view.animate()
+            .alpha(0f)
+            .setDuration(DURATION_ANIMATION)
     }
 
     override fun onClick(v: View) {
