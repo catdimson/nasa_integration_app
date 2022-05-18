@@ -18,6 +18,7 @@ import ru.dkotik.nasaintegrationapp.viewmodel.MarsPictureViewModel
 class MarsPictureFragment: Fragment() {
 
     private var _binding: FragmentPageMarsPhotoBinding? = null
+    private val DURATION_ANIMATION = 800L
 
     val binding: FragmentPageMarsPhotoBinding
         get () = _binding!!
@@ -48,11 +49,14 @@ class MarsPictureFragment: Fragment() {
     }
 
     private fun renderData(data: AppState) {
+        resetAlphaToZero(binding.imageView)
+
         when (data) {
             is AppState.SuccessMars -> {
                 if (data.serverResponseData.photos.isEmpty()){
                     Snackbar.make(binding.root, "В этот день curiosity не сделал ни одного снимка", Snackbar.LENGTH_SHORT).show()
                 } else {
+                    runAppearanceAnimation(binding.imageView)
                     val responseData = data.serverResponseData.photos.first()
                     fullFields(responseData)
                 }
@@ -60,6 +64,9 @@ class MarsPictureFragment: Fragment() {
             is AppState.Loading -> {
             }
             is AppState.Error -> {
+                binding.imageView.setImageResource(R.drawable.error_load)
+                runAppearanceAnimation(binding.imageView)
+
                 binding.mainMarsPhoto.showSnackBarWithResources(
                     fragment = this,
                     text = R.string.error,
@@ -68,6 +75,16 @@ class MarsPictureFragment: Fragment() {
                 )
             }
         }
+    }
+
+    private fun resetAlphaToZero(view: View) {
+        view.alpha = 0f
+    }
+
+    private fun runAppearanceAnimation(view: View) {
+        view.animate()
+            .alpha(1.0f)
+            .setDuration(DURATION_ANIMATION)
     }
 
     private fun fullFields(data: MarsServerResponseData) {
