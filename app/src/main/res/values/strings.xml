@@ -26,10 +26,11 @@
     <!-- Пункты меню навигации -->
     <string name="page_main">Главная</string>
     <string name="page_marsohod">Марс</string>
-    <string name="page_asteroid">Астероиды</string>
+<!--    <string name="page_asteroid">Астероиды</string>-->
+    <string name="page_animations_constraint_set">Пример1</string>
     <string name="page_epic_earth">Земля</string>
 <!--    <string name="page_weather">Погода</string>-->
-    <string name="page_animations_rotate_fab">Пример урока</string>
+    <string name="page_animations_rotate_fab">Пример2</string>
 
     <string name="photo_of_mars">Фото марса</string>
     <string name="photo_mars_info">Информация о снимке</string>

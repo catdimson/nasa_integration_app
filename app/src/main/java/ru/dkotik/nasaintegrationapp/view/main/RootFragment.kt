@@ -58,8 +58,8 @@ class RootFragment: Fragment() {
                     navigationTo(EpicEarthFragment.newInstance())
                     true
                 }
-                R.id.bottom_view_asteroid -> {
-                    navigationTo(PictureOfTheDayFragment.newInstance())
+                R.id.bottom_view_animations_constraint_set -> {
+                    navigationTo(ConstraintSetStartFragment.newInstance())
                     true
                 }
                 R.id.bottom_view_animations_rotate_fab -> {
