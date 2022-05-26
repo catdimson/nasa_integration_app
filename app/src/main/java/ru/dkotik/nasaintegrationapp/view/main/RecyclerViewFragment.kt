@@ -36,7 +36,10 @@ class RecyclerViewFragment: Fragment() {
         val adapter = createAdapter()
         adapter.setData(generateFakeData())
         binding.recyclerView.adapter = adapter
-        binding.recyclerFragmentFAB.setOnClickListener { adapter.appendItem() }
+        binding.recyclerFragmentFAB.setOnClickListener {
+            adapter.appendItem()
+            binding.recyclerView.smoothScrollToPosition(adapter.itemCount)
+        }
 
         super.onViewCreated(view, savedInstanceState)
     }

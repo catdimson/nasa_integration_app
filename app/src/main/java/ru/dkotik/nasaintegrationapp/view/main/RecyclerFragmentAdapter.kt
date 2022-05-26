@@ -77,6 +77,14 @@ class RecyclerFragmentAdapter(
                 ivMars.setOnClickListener {
                     onClickItemListener.onItemClick(data)
                 }
+                addItemImageView.setOnClickListener {
+                    listData.add(layoutPosition, generateItem())
+                    notifyItemInserted(layoutPosition)
+                }
+                removeItemImageView.setOnClickListener {
+                    listData.removeAt(layoutPosition)
+                    notifyItemRemoved(layoutPosition)
+                }
             }
         }
     }
