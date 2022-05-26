@@ -54,8 +54,13 @@ class RootFragment: Fragment() {
                     navigationTo(MarsPictureFragment.newInstance())
                     true
                 }
-                R.id.bottom_view_epic_earth -> {
-                    navigationTo(EpicEarthFragment.newInstance())
+                // переход на фрагмент с примером скроллинга
+//                R.id.bottom_view_epic_earth -> {
+//                    navigationTo(EpicEarthFragment.newInstance())
+//                    true
+//                }
+                R.id.bottom_view_recycler_view -> {
+                    navigationTo(RecyclerViewFragment.newInstance())
                     true
                 }
                 R.id.bottom_view_animations_constraint_set -> {
