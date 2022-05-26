@@ -11,13 +11,14 @@ import ru.dkotik.nasaintegrationapp.databinding.FragmentRecyclerViewBinding
 import ru.dkotik.nasaintegrationapp.dto.pod.Data
 import ru.dkotik.nasaintegrationapp.dto.pod.TYPE_EARTH
 import ru.dkotik.nasaintegrationapp.dto.pod.TYPE_HEADER
+import ru.dkotik.nasaintegrationapp.dto.pod.TYPE_MARS
 import ru.dkotik.nasaintegrationapp.view.OnClickItemListener
 
 class RecyclerFragmentAdapter(
     val onClickItemListener: OnClickItemListener
 ): RecyclerView.Adapter<RecyclerFragmentAdapter.BaseViewHolder>() {
-    private lateinit var listData: List<Data>
-    fun setData(listData: List<Data>) {
+    private lateinit var listData: MutableList<Data>
+    fun setData(listData: MutableList<Data>) {
         this.listData = listData
     }
 
@@ -45,6 +46,13 @@ class RecyclerFragmentAdapter(
     override fun getItemCount() = listData.size
 
     override fun getItemViewType(position: Int) = listData[position].type
+
+    fun appendItem() {
+        listData.add(generateItem())
+        notifyItemInserted(listData.size - 1)
+    }
+
+    private fun generateItem() = Data("Mars", type = TYPE_MARS)
 
     abstract class BaseViewHolder(view:View):RecyclerView.ViewHolder(view){
         abstract fun bind(data: Data)

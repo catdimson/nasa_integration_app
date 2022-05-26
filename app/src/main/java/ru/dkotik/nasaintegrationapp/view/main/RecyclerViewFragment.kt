@@ -36,6 +36,7 @@ class RecyclerViewFragment: Fragment() {
         val adapter = createAdapter()
         adapter.setData(generateFakeData())
         binding.recyclerView.adapter = adapter
+        binding.recyclerFragmentFAB.setOnClickListener { adapter.appendItem() }
 
         super.onViewCreated(view, savedInstanceState)
     }
@@ -51,7 +52,7 @@ class RecyclerViewFragment: Fragment() {
 
 }
 
-private fun generateFakeData(): List<Data> {
+private fun generateFakeData(): MutableList<Data> {
     val listData= arrayListOf(
         Data("Земля", "Дополнительный текст"),
         Data("Земля", "Дополнительный текст"),
