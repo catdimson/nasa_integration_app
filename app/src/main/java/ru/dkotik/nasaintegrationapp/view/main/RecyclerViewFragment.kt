@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import ru.dkotik.nasaintegrationapp.databinding.FragmentRecyclerViewBinding
 import ru.dkotik.nasaintegrationapp.dto.pod.Data
+import ru.dkotik.nasaintegrationapp.dto.pod.TYPE_HEADER
 import ru.dkotik.nasaintegrationapp.dto.pod.TYPE_MARS
 import ru.dkotik.nasaintegrationapp.view.OnClickItemListener
 
@@ -51,7 +52,7 @@ class RecyclerViewFragment: Fragment() {
 }
 
 private fun generateFakeData(): List<Data> {
-    val data = arrayListOf(
+    val listData= arrayListOf(
         Data("Земля", "Дополнительный текст"),
         Data("Земля", "Дополнительный текст"),
         Data("Земля", "Дополнительный текст"),
@@ -61,7 +62,8 @@ private fun generateFakeData(): List<Data> {
         Data("Марс", type = TYPE_MARS),
         Data("Марс", type = TYPE_MARS),
     )
-    data.shuffle()
+    listData.shuffle()
+    listData.add(0,Data("Заголовок", type = TYPE_HEADER))
 
-    return data
+    return listData
 }

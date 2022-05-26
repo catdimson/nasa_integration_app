@@ -4,9 +4,9 @@
     <string name="photo_of_the_day_stub">Фото дня :)</string>
     <string name="search_wiki">Найти в Википедии</string>
     <string name="wiki_helper_text">Поищите термин в википедии</string>
-    <string name="favourite">favourite</string>
-    <string name="settings">settings</string>
-    <string name="search">Search</string>
+    <string name="favourite">Избранное</string>
+    <string name="settings">Настройки</string>
+    <string name="search">Поиск</string>
     <string name="imageDesc">Картинка</string>
     <string name="error">Ошибка</string>
     <string name="reload">Повторить</string>
@@ -19,9 +19,10 @@
     <string name="yesterday">Вчера</string>
     <string name="today">Сегодня</string>
 
-    <string name="system">System</string>
-    <string name="earth">Earth</string>
-    <string name="mars">Mars</string>
+    <string name="system">Система планет</string>
+    <string name="earth">Земля</string>
+    <string name="mars">Марс</string>
+    <string name="header">Заголовок</string>
 
     <!-- Пункты меню навигации -->
     <string name="page_main">Главная</string>
