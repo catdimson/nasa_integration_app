@@ -218,6 +218,7 @@
         <ru.dkotik.nasaintegrationapp.utils.EquilateralImageView
             android:id="@+id/imageView"
             android:layout_width="0dp"
+            android:alpha="0"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
             android:layout_marginTop="15dp"
@@ -232,11 +233,5 @@
     <include
         android:id="@+id/bsl"
         layout="@layout/bottom_sheet_layout" />
-
-    <include
-        android:id="@+id/includedLoadingLayout"
-        layout="@layout/loading_layout"
-        app:layout_anchor="@+id/main"
-        app:layout_anchorGravity="center" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -67,8 +67,4 @@
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-    <include
-        android:id="@+id/includedLoadingLayout"
-        layout="@layout/loading_layout" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
