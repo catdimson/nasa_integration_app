@@ -12,12 +12,12 @@ import ru.dkotik.nasaintegrationapp.dto.pod.TYPE_HEADER
 import ru.dkotik.nasaintegrationapp.dto.pod.TYPE_MARS
 import ru.dkotik.nasaintegrationapp.view.OnClickItemListener
 
-class RecyclerViewFragment: Fragment() {
+class RecyclerViewFragment : Fragment() {
 
     private var _binding: FragmentRecyclerViewBinding? = null
 
     val binding: FragmentRecyclerViewBinding
-        get () = _binding!!
+        get() = _binding!!
 
     companion object {
         fun newInstance() = RecyclerViewFragment()
@@ -55,19 +55,19 @@ class RecyclerViewFragment: Fragment() {
 
 }
 
-private fun generateFakeData(): MutableList<Data> {
-    val listData= arrayListOf(
-        Data("Земля", "Дополнительный текст"),
-        Data("Земля", "Дополнительный текст"),
-        Data("Земля", "Дополнительный текст"),
-        Data("Земля", "Дополнительный текст"),
-        Data("Марс", type = TYPE_MARS),
-        Data("Марс", type = TYPE_MARS),
-        Data("Марс", type = TYPE_MARS),
-        Data("Марс", type = TYPE_MARS),
+private fun generateFakeData(): MutableList<Pair<Data, Boolean>> {
+    val listData = arrayListOf(
+        Pair(Data("Земля", "Дополнительный текст"), false),
+        Pair(Data("Земля", "Дополнительный текст"), false),
+        Pair(Data("Земля", "Дополнительный текст"), false),
+        Pair(Data("Земля", "Дополнительный текст"), false),
+        Pair(Data("Марс", type = TYPE_MARS), false),
+        Pair(Data("Марс", type = TYPE_MARS), false),
+        Pair(Data("Марс", type = TYPE_MARS), false),
+        Pair(Data("Марс", type = TYPE_MARS), false),
     )
     listData.shuffle()
-    listData.add(0,Data("Заголовок", type = TYPE_HEADER))
+    listData.add(0, Pair(Data("Заголовок", type = TYPE_HEADER), false))
 
     return listData
 }
