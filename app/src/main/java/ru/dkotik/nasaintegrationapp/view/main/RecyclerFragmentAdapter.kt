@@ -1,5 +1,6 @@
 package ru.dkotik.nasaintegrationapp.view.main
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.dkotik.nasaintegrationapp.databinding.FragmentRecyclerItemEarthBinding
 import ru.dkotik.nasaintegrationapp.databinding.FragmentRecyclerItemHeaderBinding
 import ru.dkotik.nasaintegrationapp.databinding.FragmentRecyclerItemMarsBinding
-import ru.dkotik.nasaintegrationapp.databinding.FragmentRecyclerViewBinding
 import ru.dkotik.nasaintegrationapp.dto.pod.Data
 import ru.dkotik.nasaintegrationapp.dto.pod.TYPE_EARTH
 import ru.dkotik.nasaintegrationapp.dto.pod.TYPE_HEADER
@@ -16,7 +16,7 @@ import ru.dkotik.nasaintegrationapp.view.OnClickItemListener
 
 class RecyclerFragmentAdapter(
     val onClickItemListener: OnClickItemListener
-): RecyclerView.Adapter<RecyclerFragmentAdapter.BaseViewHolder>() {
+): RecyclerView.Adapter<RecyclerFragmentAdapter.BaseViewHolder>(), ItemTouchHelperAdapter {
 
     private lateinit var listData: MutableList<Pair<Data, Boolean>>
     fun setData(listData: MutableList<Pair<Data, Boolean>>) {
@@ -71,7 +71,7 @@ class RecyclerFragmentAdapter(
         }
     }
 
-    inner class MarsViewHolder(view: View): BaseViewHolder(view) {
+    inner class MarsViewHolder(view: View): BaseViewHolder(view), ItemTouchHelperViewHolder {
         override fun bind(data: Pair<Data, Boolean>) {
             FragmentRecyclerItemMarsBinding.bind(itemView).apply {
                 tvName.text = data.first.name
@@ -95,7 +95,7 @@ class RecyclerFragmentAdapter(
                     }
                 }
                 moveItemDown.setOnClickListener {
-                    if (isNotLimitDown(layoutPosition)) {
+                    if (isNotDownLimit(layoutPosition)) {
                         listData.removeAt(layoutPosition).apply {
                             listData.add(layoutPosition + 1, this)
                         }
@@ -113,6 +113,14 @@ class RecyclerFragmentAdapter(
                 }
             }
         }
+
+        override fun onItemSelected() {
+            itemView.setBackgroundColor(Color.YELLOW)
+        }
+
+        override fun onItemClear() {
+            itemView.setBackgroundColor(0)
+        }
     }
 
     inner class HeaderViewHolder(view:View):BaseViewHolder(view){
@@ -128,5 +136,19 @@ class RecyclerFragmentAdapter(
 
     private fun isNotUpLimit(position: Int) = position != 1
 
-    private fun isNotLimitDown(position: Int) = position + 1 != listData.size
+    private fun isNotDownLimit(position: Int) = position + 1 != listData.size
+
+    override fun onItemMove(fromPosition: Int, toPosition: Int) {
+        if (isNotUpLimit(fromPosition) || fromPosition < toPosition) { //  && fromPosition < toPosition
+            listData.removeAt(fromPosition).apply {
+                listData.add(toPosition, this)
+            }
+            notifyItemMoved(fromPosition, toPosition)
+        }
+    }
+
+    override fun onItemDismiss(position: Int) {
+        listData.removeAt(position)
+        notifyItemRemoved(position)
+    }
 }
