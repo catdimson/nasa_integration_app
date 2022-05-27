@@ -85,6 +85,22 @@ class RecyclerFragmentAdapter(
                     listData.removeAt(layoutPosition)
                     notifyItemRemoved(layoutPosition)
                 }
+                moveItemUp.setOnClickListener {
+                    if (isNotUpLimit(layoutPosition)) {
+                        listData.removeAt(layoutPosition).apply {
+                            listData.add(layoutPosition - 1, this)
+                        }
+                        notifyItemMoved(layoutPosition,layoutPosition - 1)
+                    }
+                }
+                moveItemDown.setOnClickListener {
+                    if (isNotLimitDown(layoutPosition)) {
+                        listData.removeAt(layoutPosition).apply {
+                            listData.add(layoutPosition + 1, this)
+                        }
+                        notifyItemMoved(layoutPosition, layoutPosition + 1)
+                    }
+                }
             }
         }
     }
@@ -99,4 +115,8 @@ class RecyclerFragmentAdapter(
             }
         }
     }
+
+    private fun isNotUpLimit(position: Int) = position != 1
+
+    private fun isNotLimitDown(position: Int) = position + 1 != listData.size
 }

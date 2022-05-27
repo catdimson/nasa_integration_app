@@ -23,6 +23,30 @@
         app:layout_constraintTop_toTopOf="@+id/ivMars" />
 
     <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/moveItemUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:tint="@color/design_default_color_error"
+        app:layout_constraintBottom_toBottomOf="@+id/ivMars"
+        app:layout_constraintEnd_toStartOf="@+id/addItemImageView"
+        app:layout_constraintStart_toEndOf="@+id/ivMars"
+        app:layout_constraintTop_toTopOf="@+id/ivMars"
+        app:srcCompat="@android:drawable/arrow_up_float" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/moveItemDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:tint="@color/design_default_color_error"
+        app:layout_constraintBottom_toBottomOf="@+id/ivMars"
+        app:layout_constraintEnd_toStartOf="@+id/addItemImageView"
+        app:layout_constraintStart_toEndOf="@+id/moveItemUp"
+        app:layout_constraintTop_toTopOf="@+id/ivMars"
+        app:srcCompat="@android:drawable/arrow_down_float" />
+
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/addItemImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
