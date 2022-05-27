@@ -1,9 +1,12 @@
 package ru.dkotik.nasaintegrationapp.view.main
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.MotionEventCompat
 import androidx.recyclerview.widget.RecyclerView
 import ru.dkotik.nasaintegrationapp.databinding.FragmentRecyclerItemEarthBinding
 import ru.dkotik.nasaintegrationapp.databinding.FragmentRecyclerItemHeaderBinding
@@ -13,9 +16,11 @@ import ru.dkotik.nasaintegrationapp.dto.pod.TYPE_EARTH
 import ru.dkotik.nasaintegrationapp.dto.pod.TYPE_HEADER
 import ru.dkotik.nasaintegrationapp.dto.pod.TYPE_MARS
 import ru.dkotik.nasaintegrationapp.view.OnClickItemListener
+import ru.dkotik.nasaintegrationapp.view.OnStartDragListener
 
 class RecyclerFragmentAdapter(
-    val onClickItemListener: OnClickItemListener
+    val onClickItemListener: OnClickItemListener,
+    val onStartDragListener: OnStartDragListener
 ): RecyclerView.Adapter<RecyclerFragmentAdapter.BaseViewHolder>(), ItemTouchHelperAdapter {
 
     private lateinit var listData: MutableList<Pair<Data, Boolean>>
@@ -72,6 +77,7 @@ class RecyclerFragmentAdapter(
     }
 
     inner class MarsViewHolder(view: View): BaseViewHolder(view), ItemTouchHelperViewHolder {
+        @SuppressLint("ClickableViewAccessibility")
         override fun bind(data: Pair<Data, Boolean>) {
             FragmentRecyclerItemMarsBinding.bind(itemView).apply {
                 tvName.text = data.first.name
@@ -110,6 +116,13 @@ class RecyclerFragmentAdapter(
                         it.first to !it.second
                     }
                     notifyItemChanged(layoutPosition)
+                }
+
+                dragHandleImageView.setOnTouchListener { _, motionEvent ->
+                    if (MotionEventCompat.getActionMasked(motionEvent) == MotionEvent.ACTION_DOWN) {
+                        onStartDragListener.onStartDrag(this@MarsViewHolder)
+                    }
+                    false
                 }
             }
         }

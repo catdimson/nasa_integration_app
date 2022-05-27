@@ -23,14 +23,6 @@
         android:enabled="true"
         android:title="@string/page_recycler_view" />
 
-    <!--Пункт меню для перехода на фрагмент скроллинга-->
-<!--    <item-->
-<!--        android:id="@+id/bottom_view_epic_earth"-->
-<!--        android:icon="@drawable/ic_space_telescope"-->
-<!--        app:tooltipText="Камера полихроматического изображения Земли"-->
-<!--        android:enabled="true"-->
-<!--        android:title="@string/page_epic_earth" />-->
-
     <item
         android:id="@+id/bottom_view_animations_constraint_set"
         android:icon="@drawable/ic_space_comet"

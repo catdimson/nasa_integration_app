@@ -13,10 +13,12 @@ import ru.dkotik.nasaintegrationapp.dto.pod.Data
 import ru.dkotik.nasaintegrationapp.dto.pod.TYPE_HEADER
 import ru.dkotik.nasaintegrationapp.dto.pod.TYPE_MARS
 import ru.dkotik.nasaintegrationapp.view.OnClickItemListener
+import ru.dkotik.nasaintegrationapp.view.OnStartDragListener
 
 class RecyclerViewFragment : Fragment() {
 
     private var _binding: FragmentRecyclerViewBinding? = null
+    private lateinit var itemTouchHelper: ItemTouchHelper
 
     val binding: FragmentRecyclerViewBinding
         get() = _binding!!
@@ -43,18 +45,26 @@ class RecyclerViewFragment : Fragment() {
             binding.recyclerView.smoothScrollToPosition(adapter.itemCount)
         }
 
-        ItemTouchHelper(ItemTouchHelperCallback(adapter)).attachToRecyclerView(binding.recyclerView)
+        itemTouchHelper = ItemTouchHelper(ItemTouchHelperCallback(adapter))
+        itemTouchHelper.attachToRecyclerView(binding.recyclerView)
 
         super.onViewCreated(view, savedInstanceState)
     }
 
     private fun createAdapter(): RecyclerFragmentAdapter {
-        return RecyclerFragmentAdapter(object : OnClickItemListener {
-            override fun onItemClick(data: Data) {
-                Toast.makeText(context, "Работает. Клик по: ${data.name}", Toast.LENGTH_SHORT)
-                    .show()
+        return RecyclerFragmentAdapter(
+            object: OnClickItemListener {
+                override fun onItemClick(data: Data) {
+                    Toast.makeText(context, "Работает. Клик по: ${data.name}", Toast.LENGTH_SHORT)
+                        .show()
+                }
+            },
+            object: OnStartDragListener {
+                override fun onStartDrag(view: RecyclerView.ViewHolder) {
+                    itemTouchHelper.startDrag(view)
+                }
             }
-        })
+        )
     }
 
     class ItemTouchHelperCallback(
