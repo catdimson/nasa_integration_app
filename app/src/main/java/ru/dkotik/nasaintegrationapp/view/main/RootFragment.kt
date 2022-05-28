@@ -8,10 +8,10 @@ import androidx.fragment.app.Fragment
 import ru.dkotik.nasaintegrationapp.R
 import ru.dkotik.nasaintegrationapp.databinding.FragmentRootBinding
 
-class RootFragment: Fragment() {
+class RootFragment : Fragment() {
     private var _binding: FragmentRootBinding? = null
     val binding: FragmentRootBinding
-        get () = _binding!!
+        get() = _binding!!
 
     companion object {
         fun newInstance() = RootFragment()
@@ -54,8 +54,8 @@ class RootFragment: Fragment() {
                     navigationTo(MarsPictureFragment.newInstance())
                     true
                 }
-                R.id.bottom_view_epic_earth -> {
-                    navigationTo(EpicEarthFragment.newInstance())
+                R.id.bottom_view_recycler_view -> {
+                    navigationTo(RecyclerViewFragment.newInstance())
                     true
                 }
                 R.id.bottom_view_animations_constraint_set -> {
