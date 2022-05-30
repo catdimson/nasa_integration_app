@@ -58,8 +58,8 @@ class RootFragment : Fragment() {
                     navigationTo(RecyclerViewFragment.newInstance())
                     true
                 }
-                R.id.bottom_view_animations_constraint_set -> {
-                    navigationTo(ConstraintSetStartFragment.newInstance())
+                R.id.bottom_view_spans -> {
+                    navigationTo(SpansFragment.newInstance())
                     true
                 }
                 R.id.bottom_view_animations_rotate_fab -> {

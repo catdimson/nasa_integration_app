@@ -28,10 +28,8 @@
     <string name="page_main">Главная</string>
     <string name="page_marsohod">Марс</string>
     <string name="page_recycler_view">Ресайклер вью</string>
-<!--    <string name="page_asteroid">Астероиды</string>-->
-    <string name="page_animations_constraint_set">Пример1</string>
+    <string name="page_spans">Пример1</string>
     <string name="page_epic_earth">Земля</string>
-<!--    <string name="page_weather">Погода</string>-->
     <string name="page_animations_rotate_fab">Пример2</string>
 
     <string name="photo_of_mars">Фото марса</string>
@@ -53,5 +51,14 @@
         Названа в честь Марса -- древнеримского бога войны, соответствующего древнегреческому Аресу.
         Иногда Марс называют «красной планетой» из-за красноватого оттенка поверхности, придаваемого
         ей минералом маггемитом (оксидом железа).
+    </string>
+
+    <string name="span_fish_text">
+        In their quest to improve the quality of life, they note that the high-tech concept of social order, as well as a fresh look at familiar things, certainly opens up new horizons for the analysis of repetitive behavior patterns.\nBy the way, the features of domestic policy are proportionally distributed by industry.\nWithin the framework of modern studies replicated by statistical data, modern studies cover samples among selected populations.\nUndoubtedly, the constant growth and scope of our activities creates the prerequisites for new proposals.\nthe choice of behavior patterns, the high quality of positional research, as well as a natural look at the usual horizons of things - of course, opens up new opportunities for choice in development.\nOur cause is not as straightforward as the results may be: modern development methodology requires the relevance of the study of development. Thus, the internal structure is strengthened and developed, forming a circle (specialists) participation in experiments that are striking in their scale and occurrence. Here is a practical example of modern management - a high-tech concept of social organization directly depends on the progress of the professional community. But the main shareholders of the companies only add to the factional divisions and appoint as contenders for participation in the elections.\nEqual, synthetic measurement of physiological processes and regulation of the state.
+        In their quest to improve the quality of life, they note that the high-tech concept of social order, as well as a fresh look at familiar things, certainly opens up new horizons for the analysis of repetitive behavior patterns.\nBy the way, the features of domestic policy are proportionally distributed by industry.\nWithin the framework of modern studies replicated by statistical data, modern studies cover samples among selected populations.\nUndoubtedly, the constant growth and scope of our activities creates the prerequisites for new proposals.\nthe choice of behavior patterns, the high quality of positional research, as well as a natural look at the usual horizons of things - of course, opens up new opportunities for choice in development.\nOur cause is not as straightforward as the results may be: modern development methodology requires the relevance of the study of development. Thus, the internal structure is strengthened and developed, forming a circle (specialists) participation in experiments that are striking in their scale and occurrence. Here is a practical example of modern management - a high-tech concept of social organization directly depends on the progress of the professional community. But the main shareholders of the companies only add to the factional divisions and appoint as contenders for participation in the elections.\nEqual, synthetic measurement of physiological processes and regulation of the state.
+    </string>
+
+    <string name="span_fish_multicolor_text">
+        Ideological considerations of a higher order, as well as a course towards a socially oriented national project, make it possible to assess the value of both self-sufficient and externally dependent conceptual solutions.\nTaking into account the indicators of success, the high-tech concept of social order requires us to analyze the economic feasibility of the decisions we make.\nDefinitely, the conclusions made on the basis of Internet analytics to this day remain the lot of liberals who are eager to be objectively considered by the relevant authorities.\nJust as socio-economic development reveals the urgent need for the positions taken by the participants in relation to the tasks set.\nIt is difficult to say why the elements of the political process will be described in as much detail as possible.\nEach of us understands the obvious thing: the innovative path we have chosen contributes to improving the quality of rethinking foreign economic policies.\nIt is pleasant, citizens, to see how the obvious signs of the victory of institutionalization, initiated exclusively synthetically, are turned into a laughingstock, although their very existence brings undoubted benefits to society.
     </string>
 </resources>
