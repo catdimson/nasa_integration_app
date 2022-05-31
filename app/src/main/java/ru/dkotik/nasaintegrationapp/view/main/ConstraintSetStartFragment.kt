@@ -1,6 +1,7 @@
 package ru.dkotik.nasaintegrationapp.view.main
 
 import android.content.Context
+import android.graphics.Typeface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -39,6 +40,7 @@ class ConstraintSetStartFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initHandlers()
+        initFonts()
     }
 
     private fun initHandlers() {
@@ -63,5 +65,14 @@ class ConstraintSetStartFragment: Fragment() {
 
         constraintSet.clone(context, layout)
         constraintSet.applyTo(binding.constraintContainer)
+    }
+
+    private fun initFonts() {
+        val typefaceTheBomb = Typeface.createFromAsset(requireActivity().assets, "fonts/TheBomb.ttf")
+        val typefaceSpaceQuest = Typeface.createFromAsset(requireActivity().assets, "fonts/SpaceQuest.ttf")
+        binding.title.typeface = typefaceTheBomb
+        binding.description.typeface = typefaceSpaceQuest
+        binding.date.typeface = typefaceSpaceQuest
+        binding.tap.typeface = typefaceTheBomb
     }
 }

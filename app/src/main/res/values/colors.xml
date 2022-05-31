@@ -63,4 +63,14 @@
 
     <color name="colorAccent">#AC842E</color>
     <color name="colorAccent40Alfa">#66AC842E</color>
+
+    <!-- цвета радуги для текста -->
+    <color name="mul_red">#ff0000</color>
+    <color name="mul_orange">#ffa500</color>
+    <color name="mul_yellow">#ffff00</color>
+    <color name="mul_green">#008000</color>
+    <color name="mul_blue">#0000ff</color>
+    <color name="mul_indigo">#4b0082</color>
+    <color name="mul_violet">#ee82ee</color>
+
 </resources>
