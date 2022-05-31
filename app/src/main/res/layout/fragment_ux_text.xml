@@ -11,6 +11,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/uxTextTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -42,6 +43,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/uxTextTitle2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -73,6 +75,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/uxTextTitle3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
