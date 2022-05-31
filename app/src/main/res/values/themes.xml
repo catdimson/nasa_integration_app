@@ -70,6 +70,10 @@
         <item name="bottomNavigationStyle">@style/customBottomNavigationView2</item>
     </style>
 
+    <style name="SplashTheme" parent="BaseTheme">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>
+
     <style name="customFAB" parent="Widget.MaterialComponents.FloatingActionButton">
         <item name="backgroundTint">@color/violet_100</item>
     </style>
