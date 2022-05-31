@@ -19,14 +19,17 @@ class UXActivity: AppCompatActivity() {
 
         binding.bottomNavigationViewUX.setOnItemSelectedListener {
             when(it.itemId){
-                R.id.fragment_ux->{
-                    navigateTo(UXFragment.newInstance())
+                R.id.fragment_ux_text->{
+                    navigateTo(TextUXFragment.newInstance())
+                }
+                R.id.fragment_ux_button->{
+                    navigateTo(ButtonUXFragment.newInstance())
                 }
             }
             true
         }
 
-        binding.bottomNavigationViewUX.selectedItemId = R.id.fragment_ux
+        binding.bottomNavigationViewUX.selectedItemId = R.id.fragment_ux_text
     }
 
     private fun navigateTo(fragment: Fragment){

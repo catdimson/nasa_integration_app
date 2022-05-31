@@ -5,25 +5,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import ru.dkotik.nasaintegrationapp.databinding.FragmentUxBinding
+import ru.dkotik.nasaintegrationapp.databinding.FragmentUxButtonBinding
 
-class UXFragment: Fragment() {
+class ButtonUXFragment: Fragment() {
 
-    private var _binding: FragmentUxBinding? = null
-    private val binding: FragmentUxBinding
+    private var _binding: FragmentUxButtonBinding? = null
+    private val binding: FragmentUxButtonBinding
         get() = _binding!!
 
     companion object{
-        fun newInstance() = UXFragment()
+        fun newInstance() = ButtonUXFragment()
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentUxBinding.inflate(inflater, container, false)
+        _binding = FragmentUxButtonBinding.inflate(inflater, container, false)
         return binding.root
     }
 
