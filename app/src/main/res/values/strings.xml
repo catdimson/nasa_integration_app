@@ -66,6 +66,7 @@
     <string name="ux_text_description">Основной текст</string>
     <string name="ux_text_smaller">Текст, который не должнен бросаться в глаза</string>
     <string name="fragment_ux_button">fragment_ux_button</string>
+    <string name="fragment_ux_tutorial">fragment_ux_tutorial</string>
     <string name="ux_button_primary">Важная кнопка</string>
     <string name="ux_button_detail">Кнопка с инфой</string>
     <string name="ux_button_bad">Нежелательная кнопка</string>
