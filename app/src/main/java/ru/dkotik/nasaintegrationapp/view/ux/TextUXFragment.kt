@@ -1,36 +1,11 @@
 package ru.dkotik.nasaintegrationapp.view.ux
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import ru.dkotik.nasaintegrationapp.databinding.FragmentUxTextBinding
 
-class TextUXFragment: Fragment() {
+class TextUXFragment : BaseUXFragment<FragmentUxTextBinding>(FragmentUxTextBinding::inflate) {
 
-    private var _binding: FragmentUxTextBinding? = null
-    private val binding: FragmentUxTextBinding
-        get() = _binding!!
-
-    companion object{
+    companion object {
         fun newInstance() = TextUXFragment()
-    }
-
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentUxTextBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
     }
 
 }
