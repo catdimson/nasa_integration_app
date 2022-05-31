@@ -18,17 +18,12 @@ class SplashActivity: AppCompatActivity() {
 
         findViewById<ImageView>(R.id.iv).animate().rotationBy(720f).setDuration(5000L).start()
 
-        /*Handler(mainLooper).postDelayed({
-            startActivity(Intent(this, MainActivity::class.java))
-            finish()
-        }, 5000L)*/
-
         val cdt = object: CountDownTimer(2000,2000){
             override fun onTick(millisUntilFinished: Long) {
             }
 
             override fun onFinish() {
-                startActivity(Intent(this@SplashActivity, MainActivity::class.java))
+                startActivity(Intent(this@SplashActivity, UXActivity::class.java))
                 finish()
             }
         }
